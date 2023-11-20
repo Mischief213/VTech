@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: blanchedalmond;
+}
+
+header {
+    border: 1px solid grey;
+    background-color: rgb(83, 83, 83);
+    width: 100%;
+    height: 100px;
+    color: white;
+    text-align: center;
+
+}
+
+.title {
+    width: 18%;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12px;
+}
+
+.search {
+    width: 61%;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -30px;
+}
+
+.search input:nth-child(1) {
+    width: 50%;
+    height: 35px;
+    background-color: blanchedalmond;
+    border: solid 1px blanchedalmond;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin: 25px;
+    outline: none;
+}
+
+.search input:nth-child(2) {
+    background-image: url(icon/icons8-search-48.png);
+    background-color: rgb(83, 83, 83);
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 50px;
+    margin-left: -10px;
+    border-radius: 5px;
+    border: solid 3px blanchedalmond;
+}
+
+.search input:nth-child(2):active {
+    background-color: rgb(140, 140, 140);
+    transition: 0.3s;
+}
+
+
+header div:nth-child(3) {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    padding-top: 30px;
+    position: relative;
+    top: -15px;
+}
+
+header div:nth-child(3)>a {
+    margin-left: 20px;
+}
+
+.cart {
+    border: solid 1px blanchedalmond;
+    background-color: blanchedalmond;
+    background-image: url(icon/icons8-cart-32.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    width: 60px;
+    height: 35px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.login {
+    border: solid 4px blanchedalmond;
+    border-radius: 5px;
+    background-color: rgb(83, 83, 83);
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: blanchedalmond;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    top: -10px;
+}
+
+.login:hover {
+    background-color: rgb(100, 100, 100);
+}
