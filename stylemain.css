@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-left: black 2px solid;
+    background-color: white;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-width: 1400px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background-image: url(image/banner1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    padding: 5px;
+    display: inline-block;
+    height: 0;
+    width: 100%;
+    transition: .3s;
+    position: absolute;
+    left: 0;
+}
+
+nav:hover {
+    background-color: #1f1f1f;
+    height: 70px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+header .left {
+    border-radius: 5px;
+    padding: 5px;
+    float: left;
+    height: 55px;
+    position: relative;
+    left: 150px;
+}
+
+.center {
+    display: inline-block;
+    width: 1000px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.center>a {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.center>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.center>a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+header .right {
+    float: right;
+    margin-top: 14px;
+    position: relative;
+    right: 150px;
+}
+
+.right img {
+    height: .7cm;
+    margin: 0 15px;
+    transition: .3s;
+}
+
+
+.search-container {
+    background-color: #1f1f1f;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    text-align: center;
+    padding: 12px 0;
+    opacity: 0;
+    transition: .3s;
+}
+
+.search-logo {
+    cursor: pointer;
+}
+
+.search {
+    outline: none;
+    border: #1f1f1f solid 2px;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 59%;
+    border-radius: 5px;
+    transition: width 0.3s;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.search-container img {
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.search-container.active {
+    opacity: 100;
+}
+
+.search-container.active~nav {
+    opacity: 0;
+    visibility: collapse;
+}
+
+.banner-1-title {
+    font-size: 26px;
+    text-align: left;
+    display: inline-block;
+    position: absolute;
+    top: 13%;
+    left: 500px;
+}
+
+.banner-1-desc {
+    font-size: 26px;
+    text-align: left;
+    display: inline-block;
+    position: absolute;
+    left: 500px;
+    top: 30%;
+}
+
+.banner-1-desc p {
+    display: inline-block;
+    width: 16.5em;
+}
+
+.banner-1-desc a {
+    border-bottom: solid 3px black;
+    display: inline-block;
+}
+
+.banner-1-desc a:hover {
+    border-bottom: solid 3px white;
+}
+
+.banner-1-desc a::before {
+    content: " ";
+}
+
+.banner-1-desc a::after {
+    content: " →";
+    font-size: 30px;
+    margin-left: 5px;
+    transition: .3s;
+}
+
+.banner-1-desc a:hover::after {
+    margin-left: 15px;
+}
+
+main {
+    text-align: center;
+}
+
+main hr {
+    border: solid 10px white;
+}
+
+.gurantee {
+    height: 250px;
+}
+
+.gurantee div {
+    color: black;
+    margin-top: 1%;
+    height: 90%;
+    width: 33.3333%;
+    float: left;
+}
+
+.gurantee div:nth-child(1),
+.gurantee div:nth-child(2) {
+    border-right: solid 5px black;
+}
+
+.gurantee img {
+    height: 100px;
+    margin-top: 40px;
+}
+
+.iPhone-promo {
+    background-color: black;
+    border-radius: 10px;
+    height: 500px;
+    width: 95%;
+    display: inline-block;
+}
+
+#iPhoneX img {
+    border-radius: 10px;
+    height: 400px;
+    float: left;
+    margin: 50px 0;
+    margin-left: 250px;
+}
+
+#iPhoneX h2 {
+    padding-top: 130px;
+    font-size: 60px;
+}
+
+#iPhoneX p,
+#iPhoneX a {
+    padding: 10px;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+#iPhone11 img {
+    border-radius: 10px;
+    height: 400px;
+    float: right;
+    margin: 50px 0;
+    margin-right: 80px;
+}
+
+#iPhone11 h2 {
+    padding-top: 130px;
+    font-size: 60px;
+}
+
+#iPhone11 p,
+#iPhone11 a {
+    padding: 10px;
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+.iPhone-promo>a:hover {
+    border-bottom: solid 3px white;
+}
+
+.iPhone-promo>a::after {
+    content: " →";
+    font-size: 30px;
+    margin-left: 5px;
+    transition: .3s;
+}
+
+.iPhone-promo>a:hover::after {
+    margin-left: 15px;
+}
+
+.all-cate {
+    color: black;
+    display: inline-block;
+    margin: 100px 0 20px 0;
+    position: relative;
+    right: 36%;
+    font-size: 26px;
+}
+
+.view-more {
+    font-weight: 500;
+    border-bottom: solid 2px white;
+    padding-bottom: 3px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 100px 0 20px 0;
+    position: relative;
+    left: 38%;
+    font-size: 22px;
+    transition: .3s;
+}
+
+.view-more:hover {
+    border-bottom: solid 2px black;
+    padding-bottom: 3px;
+}
+
+.view-all {
+    border: solid 10px white;
+    background-color: white;
+    height: 550px;
+    width: 100%;
+    margin: 0 50px;
+    margin-bottom: 100px;
+    text-align: left;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+
+.iPhone-box {
+    border: solid 3px #1f1f1f;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    height: 100%;
+    width: 400px;
+    padding: 10px;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+    position: relative;
+    bottom: 123px;
+}
+
+.iPhone-box-end {
+    border: solid 3px #1f1f1f;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    height: 100%;
+    width: 50px;
+    margin: 0 5px;
+    text-align: center;
+    display: inline-block;
+    opacity: 0;
+}
+
+.preview {
+    border: solid 4px 1f1f1f;
+    background-color: 1f1f1f;
+    margin: 0 50px;
+    margin-top: 20px;
+}
+
+.preview>img {
+    height: 280px;
+    display: block;
+    margin: 0 auto;
+}
+
+.preview~h2,
+.preview~p,
+.preview~a {
+    text-decoration: none;
+    color: white;
+}
+
+.preview~h2 {
+    font-size: 28px;
+}
+
+.preview~p {
+
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.preview~a {
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+}
+
+.preview~a {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.preview~a::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.preview~a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.assurance {
+    border: solid black 1px;
+    background-color: black;
+    height: 600px;
+    margin: 30px 0 3px 0;
+}
+
+.assurance div:nth-child(1) {
+    text-align: left;
+    float: left;
+    font-size: 26px;
+    margin: 130px 100px;
+    width: 44%;
+}
+
+.assurance div:nth-child(1) p {
+    text-align: left;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+.assurance img {
+    height: 400px;
+    margin: 100px 50px;
+    float: right;
+    border-radius: 10px;
+}
+
+footer {
+    border: solid 1px 10px;
+    background-color: black;
+    height: 200px;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+footer div {
+    display: inline-block;
+    color: white;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+.aboutft {
+    width: 10%;
+    height: 100%;
+    text-align: left;
+    padding-left: 70px;
+}
+
+.csft {
+    width: 58%;
+    height: 100%;
+    text-align: left;
+    padding-left: 70px;
+}
+
+.contactft {
+    width: 6%;
+    height: 100%;
+    text-align: center;
+}
+
+.contactft img {
+    height: 30px;
+}
+
+.flwft {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+.flwft img {
+    height: 30px;
+
+}
+
+.ftlink {
+    color: white;
+    text-decoration: none;
+}

@@ -7,14 +7,14 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #ffebcd;
+    background-color: white;
     border-radius: 20px;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #ffebcd;
+    background-color: white;
 }
 
 header {
@@ -46,8 +46,8 @@ header {
 .search input:nth-child(1) {
     width: 50%;
     height: 35px;
-    background-color: #ffebcd;
-    border: solid 1px #ffebcd;
+    background-color: white;
+    border: solid 1px white;
     border-radius: 10px;
     padding-left: 10px;
     margin: 25px;
@@ -65,6 +65,7 @@ header {
     margin-left: -10px;
     border-radius: 5px;
     border: solid 3px blanchedalmond;
+    cursor: pointer;
 }
 
 .search input:nth-child(2):active {
@@ -73,7 +74,7 @@ header {
 }
 
 
-header div:nth-child(3) {
+.loging-cart {
     width: 20%;
     height: 100%;
     text-align: center;
@@ -83,25 +84,35 @@ header div:nth-child(3) {
     top: -15px;
 }
 
-header div:nth-child(3)>a {
-    margin-left: 20px;
+.loging-cart>a {
+
+    margin-top: 5px;
+    margin-left: 30px;
 }
 
 .cart {
-    border: solid 1px #ffebcd;
-    background-color: #ffebcd;
-    background-image: url(icon/icons8-cart-32.png);
+    border: solid 3px white;
+    background-color: white;
+    background-image: url(icon/icons8-cart-96\ \(2\).png);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 40px;
     border-radius: 5px;
     width: 60px;
     height: 35px;
     text-decoration: none;
     display: inline-block;
+    transition: .3s;
+}
+
+.cart:hover {
+    border: solid 3px white;
+    background-color: #1f1f1f;
+    background-image: url(icon/icons8-cart-96\ \(3\).png);
 }
 
 .login {
-    border: solid 4px #ffebcd;
+    border: solid 4px white;
     border-radius: 5px;
     background-color: rgb(31, 31, 31);
     width: 80px;
@@ -140,7 +151,7 @@ nav a:hover {
 
 .ipbanner {
     background-color: #1f1f1f;
-    color: #ffebcd;
+    color: white;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 480px;
@@ -187,7 +198,7 @@ main h1 {
 
 .promotionalbanner {
     background-color: #1f1f1f;
-    color: #ffebcd;
+    color: white;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 400px;
@@ -207,7 +218,7 @@ main h1 {
 }
 
 .promotionalbanner div:nth-child(2) {
-    color: #ffebcd;
+    color: white;
     height: 100%;
     width: 20%;
     display: inline-block;
@@ -250,7 +261,7 @@ main h1 {
 
 .allcate {
     background-color: #1f1f1f;
-    color: #ffebcd;
+    color: white;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 450px;
@@ -261,7 +272,7 @@ main h1 {
 }
 
 .allcate>div {
-    border: #ffebcd solid 4px;
+    border: white solid 4px;
     width: 300px;
     height: 400px;
     margin: 0 20px;
@@ -271,7 +282,7 @@ main h1 {
 }
 
 .allcate>div img {
-    border: #ffebcd solid 1px;
+    border: white solid 1px;
     background-color: white;
     border-radius: 5px;
     height: 200px;
@@ -286,7 +297,7 @@ main h1 {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-    background-color: #ffebcd;
+    background-color: white;
     color: #1f1f1f;
     margin-top: 20px;
     padding: 5px 20px;
@@ -295,7 +306,7 @@ main h1 {
 }
 
 .allcate>a {
-    color: #ffebcd;
+    color: white;
     text-decoration: none;
     margin-left: 0 30px;
     height: 70px;
@@ -324,7 +335,7 @@ footer {
 footer div {
     display: inline-block;
     overflow: hidden;
-    color: #ffebcd;
+    color: white;
 }
 
 .aboutft {
@@ -364,6 +375,6 @@ footer div {
 }
 
 .ftlink {
-    color: #ffebcd;
+    color: white;
     text-decoration: none;
 }
