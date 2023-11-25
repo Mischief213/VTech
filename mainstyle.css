@@ -38,18 +38,28 @@ header {
 }
 
 nav {
-    padding: 5px;
-    display: inline-block;
-    height: 0;
-    width: 100%;
-    transition: .3s;
+    background-color: transparent;
     position: absolute;
-    left: 0;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    overflow: hidden;
 }
 
-nav:hover {
-    background-color: #1f1f1f;
+.white-slide-down {
+    background-color: white;
+    width: 100%;
+    height: 0;
+    position: inherit;
+    transition: .3s;
+}
+
+nav:hover .white-slide-down {
     height: 70px;
+}
+
+nav:hover a {
+    color: black;
 }
 
 header a {
@@ -60,19 +70,18 @@ header a {
 
 
 header .left {
-    border-radius: 5px;
-    padding: 5px;
+    margin: 8px 0;
+    position: absolute;
+    left: 10%;
     float: left;
-    height: 55px;
-    position: relative;
-    left: 150px;
 }
 
 .center {
     display: inline-block;
-    width: 1000px;
+    width: 50%;
+    margin: 20px 0;
     font-size: 18px;
-    margin-top: 15px;
+    font-weight: 500;
 }
 
 .center>a {
@@ -101,29 +110,40 @@ header .left {
     transform: scaleX(1);
 }
 
+nav:hover .center>a::after {
+    background: black;
+}
+
 header .right {
     float: right;
-    margin-top: 14px;
-    position: relative;
-    right: 150px;
+    position: absolute;
+    right: 5%;
+    top: 30%;
 }
 
 .right img {
     height: .7cm;
-    margin: 0 15px;
+    margin: 0 5px;
     transition: .3s;
+}
+
+.right a img:nth-child(2) {
+    opacity: 0;
+}
+
+nav:hover .right a img:nth-child(2) {
+    opacity: 1;
 }
 
 
 .search-container {
-    background-color: #1f1f1f;
+    background-color: white;
     width: 100%;
     height: 70px;
     position: absolute;
     text-align: center;
     padding: 12px 0;
     opacity: 0;
-    transition: .3s;
 }
 
 .search-logo {
@@ -133,8 +153,8 @@ header .right {
 .search {
     outline: none;
     border: #1f1f1f solid 2px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     height: 40px;
     width: 59%;
     border-radius: 5px;
@@ -154,7 +174,9 @@ header .right {
 
 .search-container.active {
     opacity: 100;
+    transition: .3s;
 }
+
 
 .search-container.active~nav {
     opacity: 0;
@@ -346,9 +368,9 @@ main hr {
 
 
 .iPhone-box {
-    border: solid 3px #1f1f1f;
+    border: solid 3px black;
     border-radius: 10px;
-    background-color: #1f1f1f;
+    background-color: black;
     height: 100%;
     width: 400px;
     padding: 10px;
@@ -437,7 +459,7 @@ main hr {
     border: solid black 1px;
     background-color: black;
     height: 600px;
-    margin: 30px 0 3px 0;
+    margin-top: 30px;
 }
 
 .assurance div:nth-child(1) {
@@ -462,8 +484,9 @@ main hr {
 }
 
 footer {
-    border: solid 1px 10px;
+    border-top: solid 2px white;
     background-color: black;
+    width: 100%;
     height: 200px;
     padding-top: 30px;
     overflow: hidden;
@@ -498,6 +521,18 @@ footer h4 {
     text-align: center;
 }
 
+.contactft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.contactft a:hover {
+    background-color: #1f1f1f;
+}
+
 .contactft img {
     height: 30px;
 }
@@ -508,8 +543,21 @@ footer h4 {
     text-align: center;
 }
 
+.flwft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.flwft a:hover {
+    background-color: #1f1f1f;
+}
+
 .flwft img {
     height: 30px;
+    margin: 0 5px;
 
 }
 
