@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-left: black 2px solid;
+    background-color: white;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    min-width: 1400px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+header a:nth-child(2) {
+    border: solid 2px white;
+    background-color: #203864;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    position: absolute;
+    top: 22px;
+    right: 250px;
+}
+
+header a:nth-child(2):hover {
+    background-color: #17294a;
+}
+
+main {
+    padding: 20px 200px;
+}
+
+main h2 {
+    margin: 30px 0;
+}
+
+main div {
+    border: solid 2px black;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+
+}
+
+main>div p {
+    margin: 10px 0;
+}
+
+main>h2 a {
+    border: solid 2px #203864;
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    padding: 1px 7px;
+    display: inline-block;
+    transition: .5s;
+    overflow: hidden;
+    text-decoration: none;
+    color: #203864;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+main>h2 a:hover {
+    width: 90px;
+}
+
+.order-history+div {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
