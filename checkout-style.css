@@ -93,12 +93,14 @@ h1 {
 .total-info>p {
     align-self: flex-end;
     font-size: 18px;
+    margin-right: 20px;
 }
 
 .total-info>h3 {
     align-self: flex-end;
     font-size: 22px;
     margin-top: 10px;
+    margin-right: 15px;
 }
 
 .customer-info {
