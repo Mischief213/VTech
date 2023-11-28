@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-left: black 2px solid;
+    background-color: white;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    min-width: 1400px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 40px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.total-info {
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 20px;
+}
+
+.total-info h1 {
+    margin-bottom: 5px;
+    margin-left: auto;
+    padding: 10px 20px;
+}
+
+.device {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.quantity {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
+    padding: 20px;
+}
+
+.total-info>p {
+    align-self: flex-end;
+    font-size: 18px;
+}
+
+.total-info>h3 {
+    align-self: flex-end;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.customer-info {
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-info hr {
+    margin: 20px 0;
+}
+
+.customer-info div {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.customer-info div>p:nth-child(2) {
+    font-weight: 500;
+}
+
+.customer-info>h1,
+.customer-info>p {
+    display: flex;
+    justify-content: right;
+}
+
+#payment {
+    padding-top: 20px;
+}
+
+.payment-razer {
+    border: 1px solid black;
+    padding: 20px;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-razer img {
+    height: 100px;
+    width: 100px;
+    margin: 0 20px;
+}
+
+.redirect {
+    display: flex;
+    align-items: center;
+}
+
+.pay-button {
+    background-color: #2a7cd3;
+    border-radius: 10px;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pay-button p {
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+}
