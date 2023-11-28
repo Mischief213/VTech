@@ -127,7 +127,7 @@ h1 {
 .customer-info>h1,
 .customer-info>p {
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 
 #payment {
