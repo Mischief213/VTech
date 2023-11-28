@@ -23,7 +23,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     min-width: 1400px;
-    overflow-x: hidden;
     margin: 0;
 }
 
@@ -227,19 +226,20 @@ main {
 }
 
 .cancel-feed {
-    border: black 2px solid;
     background-color: white;
     border-radius: 10px;
     width: 60%;
     padding: 20px;
     position: fixed;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cancel-feed input:nth-child(1) {
     margin: 20px 0;
     padding: 10px;
-    height: 200px;
+    height: 250px;
     width: 100%;
     display: flex;
 }
@@ -249,4 +249,11 @@ main {
     border-radius: 5px;
     background-color: white;
     margin: 0 10px;
+    justify-self: flex-end;
+}
+
+.cancel-feed>p {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 16px;
 }

@@ -23,7 +23,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     min-width: 1400px;
-    overflow-x: hidden;
     margin: 0;
     background-color: black;
 }

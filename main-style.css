@@ -23,7 +23,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     min-width: 1400px;
-    overflow-x: hidden;
     margin: 0;
 }
 
@@ -365,8 +364,8 @@ main hr {
     border: solid 10px white;
     background-color: white;
     height: 560px;
-    width: 100%;
-    margin: 0 0 100px 50px;
+    width: 96%;
+    margin: 0 0 100px 4%;
     display: flex;
     overflow-y: hidden;
     flex-wrap: nowrap;
