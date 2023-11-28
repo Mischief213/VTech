@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     background: url('image/login-background.jpg') no-repeat;
     background-size: cover;
@@ -17,22 +18,22 @@ body {
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: 1px solid white;
     width: 100%;
-    padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    z-index: 99;
-    text-align: center;
-    display: inline-block;
+    gap: 50px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
 }
 
 
 .wrapper {
     position: relative;
+    margin-top: 80px;
     width: 400px;
     height: 440px;
     background: transparent;

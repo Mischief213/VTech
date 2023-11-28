@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-left: black 2px solid;
+    background-color: white;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-width: 1400px;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: black;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 5px;
+    background-color: white;
+}
+
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.left {
+    position: relative;
+}
+
+.center {
+    font-size: 18px;
+}
+
+.center>a {
+    position: relative;
+    color: black;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.center>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.center>a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.right a {
+    margin: 0 10px;
+}
+
+.right img {
+    height: .7cm;
+}
+
+.search-container {
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    text-align: center;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: collapse;
+}
+
+.search-logo {
+    cursor: pointer;
+}
+
+.search {
+    outline: none;
+    border: #1f1f1f solid 2px;
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 59%;
+    border-radius: 5px;
+    transition: width 0.3s;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.search-container img {
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.search-container.active {
+    opacity: 100;
+    visibility: visible;
+    transition: .3s;
+}
+
+.search-container.active~nav {
+    opacity: 0;
+    visibility: collapse;
+}
+
+main {
+    min-height: 45em;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.bag-empty {
+    position: absolute;
+    visibility: collapse;
+}
+
+.bag-empty h2 {
+    font-size: 46px;
+}
+
+.bag-empty button {
+    border: solid 3px white;
+    background-color: transparent;
+    color: white;
+    margin-top: 30px;
+    height: 50px;
+    width: 300px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bag-empty button:hover {
+    background-color: #1f1f1f;
+}
+
+.bag {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px 30px;
+    align-self: baseline;
+    width: 98.5%;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    visibility: visible;
+}
+
+.title {
+    font-size: 20px;
+    width: 100%;
+}
+
+.title h1 {
+    display: flex;
+    justify-self: flex-start;
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
+.bag-header {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.bag-header p {
+    display: flex;
+    justify-self: flex-start;
+    padding-left: 10px;
+}
+
+.bag hr {
+    background-color: white;
+}
+
+.item {
+    display: flex;
+    margin: 10px 0;
+    height: 180px;
+}
+
+.item>div {
+    height: 100%;
+    display: flex;
+    padding-left: 10px;
+}
+
+.device-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.item div:not(div:nth-child(odd)) {
+    margin-top: 20px;
+}
+
+.device-desc h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    font-size: 20px;
+    display: flex;
+    align-items: baseline;
+    margin-top: -5px;
+}
+
+.quantity>div {
+    border-radius: 50%;
+    margin: 0 10px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    align-items: baseline;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.remove-button {
+    height: 40px;
+    padding: 20px;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border: white 2px solid;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin: 50px;
+
+}
+
+.subtotal {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.checkout-button {
+    padding: 22px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 250px;
+    background-color: transparent;
+    border: white 2px solid;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.checkout-button:hover,
+.remove-button:hover {
+    background-color: white;
+    color: black;
+}
+
+footer {
+    border-top: solid 2px white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    padding-top: 40px;
+    overflow: hidden;
+}
+
+footer div {
+    justify-content: center;
+    color: white;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+.aboutft {
+    width: 8%;
+}
+
+.csft {
+    width: 50%;
+}
+
+.contactft {
+    width: 6%;
+    text-align: center;
+}
+
+.contactft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.contactft a:hover {
+    background-color: #1f1f1f;
+}
+
+.contactft img {
+    height: 30px;
+}
+
+.flwft {
+    width: 14%;
+    text-align: center;
+}
+
+.flwft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.flwft a:hover {
+    background-color: #1f1f1f;
+}
+
+.flwft img {
+    height: 30px;
+    margin: 0 5px;
+
+}
+
+.ftlink {
+    color: white;
+    text-decoration: none;
+}

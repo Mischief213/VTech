@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VTech</title>
-    <link rel="stylesheet" href="cart-style.css">
+    <link rel="icon" href="favicon_io/favicon.ico">
+    <link rel="stylesheet" href="bag-style.css">
 </head>
 
 <body>
@@ -44,16 +45,59 @@
         </nav>
     </header>
     <main>
-        <div class="cart-empty">
+        <div class="bag-empty">
             <img src="icon/icons8-bag-96.png" alt="">
             <h2>Your bag is currently empty</h2>
             <a href="main.html"><button>return to browse</button></a>
+        </div>
+
+        <div class="bag">
+            <div class="title">
+                <h1>BAG</h1>
+                <div class="bag-header">
+                    <p style="width: 45%;">DEVICE</p>
+                    <p style="width: 15%;">PRICE</p>
+                    <p style="width: 15%;">QUANTITY</p>
+                    <p style="width: 25%;">TOTAL</p>
+                </div>
+            </div>
+            <hr>
+            <div class="item">
+                <div class="device" style="width: 45%;">
+                    <img src="image/iphone-13-pro-max-removebg-preview.png" alt="">
+                    <div class="device-desc">
+                        <h4>iPhone 13 Pro Max</h4>
+                        <p>Color: light blue</p>
+                        <p>Capacity: 64GB</p>
+                        <p>Grade: Fair</p>
+                        <p>Waranty: 6 Month</p>
+                    </div>
+                </div>
+                <div class="price" style="width: 15%;">
+                    <p>RM 2,999</p>
+                </div>
+                <div class="quantity" style="width: 15%;">
+                    <div>-</div> 1 <div>+</div>
+                </div>
+                <div class="total" style="width: 25%;">
+                    <p>RM 2,999</p>
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+            <hr>
+
+
+        </div>
+        <div class="checkout">
+            <p class="subtotal">subtotal: RM2,999</p>
+            <button class="checkout-button">checkout
+            </button>
         </div>
     </main>
     <footer>
         <div class="aboutft">
             <h4>About us</h4>
-            <a href="" class="ftlink">about</a>
+            <a href="about.html" class="ftlink">about</a>
         </div>
         <div class="csft">
             <h4>Customer Service</h4>

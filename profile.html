@@ -5,29 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vtech</title>
-    <link rel="icon" href="icon/Logo Company (Outline).png">
+    <link rel="icon" href="favicon_io/favicon.ico">
     <link rel="stylesheet" href="profile-style.css">
 </head>
 
 <body>
     <header>
-        <a href="main.html"><img src="icon/logo.png" alt="" style="height: 55px;"></a>
-        <a href="">Log out</a>
+        <a href="main.html" class="logo">
+            <img src="icon/logo.png" alt="" style="height: 55px;">
+        </a>
+        <a href="" class="logout">Log out</a>
     </header>
     <main>
-        <h2 class="profile">PROFILE <a href=""><img src="icon/icons8-edit-50.png" alt="" height="18px"> edit</a></h2>
+        <h2 class="profile">PROFILE
+            <a href=""><img src="icon/icons8-edit-50.png" title="edit" height="18px"> </a>
+        </h2>
         <div>
-            <p>name: </p>
-            <p>e-mail: </p>
-            <p>phone number: </p>
+            <p>name: imran</p>
+            <p>e-mail: imran@gmail.com</p>
+            <p>phone number: +60 11-1786 6471</p>
         </div>
-        <h2 class="adress">ADDRESSES <a href=""><img src="icon/icons8-plus-24.png" alt="" height="18px"> add</a></h2>
-        <div id="no-address">
-            <p>- no adress added -</p>
+
+        <h2 class="address">ADDRESSES
+            <a href=""><img src="icon/icons8-plus-24.png" title="add" height="18px"></a>
+        </h2>
+        <div class="address-list">
+            <p id="no-address">- no adressess added -</p>
+            <p>default address:</p>
+            <div class="have-address">
+                <p>Unistorage - UiTM Perlis. Lot 6, Anjung Siswa, Kampus Arau, Universiti Teknologi Mara, 02600 Arau,
+                    Perlis</p>
+            </div>
         </div>
+
         <h2 class="order-history">ORDER HISTORY </h2>
-        <div id="no-order">
-            <p> - you have yet not make any order - </p>
+        <div class="order-list">
+            <p id="no-order"> - you have yet not make any order - </p>
+            <div class="title">
+                <p style="width: 50%;">device</p>
+                <p style="width: 20%;">total</p>
+                <p style="width: 30%;">status</p>
+            </div>
+            <div class="have-order">
+                <div class="device" style="width: 50%;">
+                    <a href="">iPhone 13 Pro Max</a>
+                </div>
+                <div class="total" style="width: 20%;">
+                    RM2,999
+                </div>
+                <div class="status" style="width: 30%;">
+                    <a href="delivery.html">in Delivery</a>
+                </div>
+            </div>
+
         </div>
     </main>
 </body>

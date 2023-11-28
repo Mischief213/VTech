@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-left: black 2px solid;
+    background-color: white;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    min-width: 1400px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16%;
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.logout {
+    border: solid 2px white;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    transition: .3s;
+}
+
+.logout:hover {
+    background-color: white;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.admin-profile {
+    background-color: #1f1f1f;
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    height: 350px;
+    margin-top: 70px;
+    padding: 10px 30px;
+    font-size: 24px;
+    flex-direction: column;
+}
+
+main h2 {
+    display: flex;
+    justify-content: right;
+    padding: 0 20px;
+    font-size: 30px;
+}
+
+
+.admin-data {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.picture {
+    border: white 5px solid;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-image: url(admin/photo_2021-10-13_06-56-45.jpg);
+    background-size: cover;
+    background-position: 0 -20px;
+}
+
+.data {
+    margin-left: 20px;
+}
+
+.sales-track {
+    border: 5px solid #214280;
+    color: #214280;
+    border-radius: 10px;
+    margin: 100px;
+    width: 100%;
+    height: 200px;
+    padding: 10px 20px;
+}
+
+.sales-track p {
+    font-size: 24px;
+    display: flex;
+    margin: 15px 0;
+}
+
+.sales-track p>b {
+    margin: 0 15px;
+}
+
+.sales-track hr {
+    border: 1px #214280 solid;
+}
+
+.device-stock {
+    border: #23755d 5px solid;
+    color: #23755d;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.device-stock tr:hover:not(.head) {
+    background-color: #23755d;
+    color: #c1f3e4;
+}
+
+.device-stock h2,
+.transaction h2 {
+    margin-bottom: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.device-stock th {
+    background-color: #c1f3e4;
+}
+
+.transaction th {
+    background-color: #f3dcc1;
+}
+
+
+.transaction tr:hover:not(:nth-child(1)) {
+    background-color: #ba451a;
+    color: #f3dcc1;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.transaction {
+    border: 5px solid #ba451a;
+    color: #ba451a;
+    border-radius: 10px;
+    margin: 100px;
+    padding: 10px 20px;
+    width: 100%;
+}

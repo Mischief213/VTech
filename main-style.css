@@ -32,7 +32,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    display: inline-block;
+    display: flex;
     width: 100%;
     height: 100vh;
 }
@@ -42,16 +42,19 @@ nav {
     position: absolute;
     width: 100%;
     height: 70px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 .white-slide-down {
     background-color: white;
+    align-self: baseline;
     width: 100%;
     height: 0;
     position: inherit;
-    transition: .3s;
+    transition: .4s;
 }
 
 nav:hover .white-slide-down {
@@ -70,18 +73,13 @@ header a {
 
 
 header .left {
-    margin: 8px 0;
-    position: absolute;
-    left: 10%;
-    float: left;
+    position: relative;
 }
 
-.center {
-    display: inline-block;
-    width: 50%;
-    margin: 20px 0;
+header .center {
+    margin: 0 100px;
     font-size: 18px;
-    font-weight: 500;
+
 }
 
 .center>a {
@@ -114,12 +112,6 @@ nav:hover .center>a::after {
     background: black;
 }
 
-header .right {
-    float: right;
-    position: absolute;
-    right: 5%;
-    top: 30%;
-}
 
 .right img {
     height: .7cm;
@@ -183,40 +175,48 @@ nav:hover .right a img:nth-child(2) {
     visibility: collapse;
 }
 
+.banner1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 26%;
+    width: 100%;
+    margin-top: 75px;
+
+}
+
 .banner-1-title {
     font-size: 26px;
     text-align: left;
-    display: inline-block;
-    position: absolute;
-    top: 13%;
-    left: 500px;
+    position: relative;
+    left: -15px;
+}
+
+.banner-1-title p {
+    border-bottom: 2px white solid;
+    width: fit-content;
+    padding-bottom: 5px;
 }
 
 .banner-1-desc {
     font-size: 26px;
     text-align: left;
-    display: inline-block;
-    position: absolute;
-    left: 500px;
-    top: 30%;
+    position: relative;
+    left: 45px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.banner-1-desc p {
-    display: inline-block;
-    width: 16.5em;
-}
 
 .banner-1-desc a {
     border-bottom: solid 3px black;
-    display: inline-block;
 }
 
 .banner-1-desc a:hover {
     border-bottom: solid 3px white;
-}
-
-.banner-1-desc a::before {
-    content: " ";
 }
 
 .banner-1-desc a::after {
@@ -239,15 +239,17 @@ main hr {
 }
 
 .gurantee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 250px;
+    width: 100%;
 }
 
 .gurantee div {
     color: black;
-    margin-top: 1%;
     height: 90%;
-    width: 33.3333%;
-    float: left;
+    width: 35%;
 }
 
 .gurantee div:nth-child(1),
@@ -265,19 +267,26 @@ main hr {
     border-radius: 10px;
     height: 500px;
     width: 95%;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18%;
+    margin: 0 auto;
 }
+
+#iPhone11 {
+    flex-direction: row-reverse;
+    justify-content: right;
+    padding-right: 8%;
+}
+
 
 #iPhoneX img {
     border-radius: 10px;
     height: 400px;
-    float: left;
-    margin: 50px 0;
-    margin-left: 250px;
 }
 
 #iPhoneX h2 {
-    padding-top: 130px;
     font-size: 60px;
 }
 
@@ -292,13 +301,9 @@ main hr {
 #iPhone11 img {
     border-radius: 10px;
     height: 400px;
-    float: right;
-    margin: 50px 0;
-    margin-right: 80px;
 }
 
 #iPhone11 h2 {
-    padding-top: 130px;
     font-size: 60px;
 }
 
@@ -310,60 +315,61 @@ main hr {
     color: white;
 }
 
-.iPhone-promo>a:hover {
+.iPhone-promo a {
+    transition: .3s;
+}
+
+.iPhone-promo a:hover {
     border-bottom: solid 3px white;
 }
 
-.iPhone-promo>a::after {
+.iPhone-promo a::after {
     content: " →";
     font-size: 30px;
     margin-left: 5px;
     transition: .3s;
 }
 
-.iPhone-promo>a:hover::after {
+.iPhone-promo a:hover::after {
     margin-left: 15px;
+}
+
+.view-all-title {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    margin: 100px 0 20px 80px;
 }
 
 .all-cate {
     color: black;
-    display: inline-block;
-    margin: 100px 0 20px 0;
-    position: relative;
-    right: 36%;
     font-size: 26px;
+    margin-right: auto;
 }
 
 .view-more {
+    color: black;
+    font-size: 22px;
     font-weight: 500;
+    text-decoration: none;
     border-bottom: solid 2px white;
     padding-bottom: 3px;
-    text-decoration: none;
-    color: black;
-    display: inline-block;
-    margin: 100px 0 20px 0;
-    position: relative;
-    left: 38%;
-    font-size: 22px;
     transition: .3s;
 }
 
 .view-more:hover {
     border-bottom: solid 2px black;
-    padding-bottom: 3px;
 }
 
 .view-all {
     border: solid 10px white;
     background-color: white;
-    height: 550px;
+    height: 560px;
     width: 100%;
-    margin: 0 50px;
-    margin-bottom: 100px;
-    text-align: left;
-    overflow-x: scroll;
+    margin: 0 0 100px 50px;
+    display: flex;
     overflow-y: hidden;
-    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 
 
@@ -371,31 +377,13 @@ main hr {
     border: solid 3px black;
     border-radius: 10px;
     background-color: black;
-    height: 100%;
+    height: 530px;
     width: 400px;
     padding: 10px;
-    display: inline-block;
-    margin: 0 5px;
-    text-align: center;
-    position: relative;
-    bottom: 123px;
-}
-
-.iPhone-box-end {
-    border: solid 3px #1f1f1f;
-    border-radius: 10px;
-    background-color: #1f1f1f;
-    height: 100%;
-    width: 50px;
-    margin: 0 5px;
-    text-align: center;
-    display: inline-block;
-    opacity: 0;
+    margin: 5px;
 }
 
 .preview {
-    border: solid 4px 1f1f1f;
-    background-color: 1f1f1f;
     margin: 0 50px;
     margin-top: 20px;
 }
@@ -456,17 +444,18 @@ main hr {
 }
 
 .assurance {
-    border: solid black 1px;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
     height: 600px;
     margin-top: 30px;
 }
 
 .assurance div:nth-child(1) {
     text-align: left;
-    float: left;
     font-size: 26px;
-    margin: 130px 100px;
     width: 44%;
 }
 
@@ -478,22 +467,22 @@ main hr {
 
 .assurance img {
     height: 400px;
-    margin: 100px 50px;
-    float: right;
     border-radius: 10px;
 }
 
 footer {
     border-top: solid 2px white;
     background-color: black;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 200px;
-    padding-top: 30px;
+    padding-top: 40px;
     overflow: hidden;
 }
 
 footer div {
-    display: inline-block;
+    justify-content: center;
     color: white;
 }
 
@@ -502,22 +491,15 @@ footer h4 {
 }
 
 .aboutft {
-    width: 10%;
-    height: 100%;
-    text-align: left;
-    padding-left: 70px;
+    width: 8%;
 }
 
 .csft {
-    width: 58%;
-    height: 100%;
-    text-align: left;
-    padding-left: 70px;
+    width: 50%;
 }
 
 .contactft {
     width: 6%;
-    height: 100%;
     text-align: center;
 }
 
@@ -538,8 +520,7 @@ footer h4 {
 }
 
 .flwft {
-    width: 20%;
-    height: 100%;
+    width: 14%;
     text-align: center;
 }
 
