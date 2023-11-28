@@ -213,23 +213,28 @@ footer h4 {
 }
 
 .aboutft {
-    width: 8%;
+    width: 10%;
+}
+
+
+.aboutft a:hover {
+    border-bottom: white 1px solid;
 }
 
 .csft {
-    width: 50%;
+    width: 45%;
 }
 
 .contactft {
-    width: 6%;
+    width: 10%;
     text-align: center;
 }
 
 .contactft a {
     border: black solid 3px;
     display: inline-block;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 8px;
+    border-radius: 50%;
     transition: .3s;
 }
 
@@ -249,8 +254,8 @@ footer h4 {
 .flwft a {
     border: black solid 3px;
     display: inline-block;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 8px;
+    border-radius: 50%;
     transition: .3s;
 }
 
