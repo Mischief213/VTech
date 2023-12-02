@@ -100,7 +100,6 @@ nav a {
     position: absolute;
     text-align: center;
     opacity: 0;
-    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;

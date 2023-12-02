@@ -86,6 +86,7 @@ nav a {
     transform: scaleX(1);
 }
 
+
 .right a {
     margin: 0 10px;
 }
@@ -101,7 +102,6 @@ nav a {
     position: absolute;
     text-align: center;
     opacity: 0;
-    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,13 +153,12 @@ nav a {
 }
 
 main {
-    height: 100%;
     display: flex;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .device-preview {
-    border: 1px white solid;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -168,7 +167,6 @@ main {
 }
 
 .image {
-    background-color: #1f1f1f;
     border-radius: 10px;
     margin: 5% 3%;
     display: flex;
@@ -318,4 +316,153 @@ span {
     background-color: white;
     color: black;
     font-weight: 500;
+}
+
+.spec-desc {
+    background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(74, 98, 110) 131%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 0 50px;
+    margin-bottom: 200px;
+}
+
+.spec-desc hr {
+    margin: 40px 0;
+    border: white 3px solid;
+    width: 100%;
+}
+
+.spec-desc h1 {
+    font-size: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.desc {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+.desc h2 {
+    margin-bottom: 10px;
+}
+
+.desc p {
+    font-size: 17px;
+    line-height: 35px;
+}
+
+.in-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.in-box h1 {
+    width: 100%;
+    font-size: 36px;
+}
+
+.in-box p {
+    width: 750px;
+    font-size: 24px;
+}
+
+footer {
+    border-top: solid 2px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+}
+
+.ftup {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 170px;
+    padding-top: 40px;
+    overflow: hidden;
+}
+
+footer div {
+    justify-content: center;
+    color: white;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+footer hr {
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+.aboutft {
+    width: 10%;
+}
+
+
+.aboutft a:hover {
+    border-bottom: white 1px solid;
+}
+
+.csft {
+    width: 45%;
+}
+
+.contactft {
+    width: 10%;
+    text-align: center;
+}
+
+.contactft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.contactft a:hover {
+    background-color: #1f1f1f;
+}
+
+.contactft img {
+    height: 30px;
+}
+
+.flwft {
+    width: 14%;
+    text-align: center;
+}
+
+.flwft a {
+    border: black solid 3px;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.flwft a:hover {
+    background-color: #1f1f1f;
+}
+
+.flwft img {
+    height: 30px;
+    margin: 0 5px;
+
+}
+
+.ftlink {
+    color: white;
+    text-decoration: none;
 }

@@ -51,7 +51,7 @@
         <div class="device-preview">
             <div class="image">
                 <img src="image/device preview/iphonex.png" alt="" id="gray">
-                <img src="image/device preview/iphonex2.png" alt="" id="silver" style="   opacity: 0;">
+                <img src="image/device preview/iphonex2.png" alt="" id="silver" style="opacity: 0;">
             </div>
 
             <div class="description">
@@ -67,9 +67,9 @@
                     </div>
                     <br><br>
                     <div class="color-box">
-                        <input onclick="changeVisibilityGray()" type="radio" checked="checked" name="color" id="gray">
+                        <input onclick="visibilityGray()" type="radio" checked="checked" name="color" id="gray">
                         <span></span> <!--separartion-->
-                        <input onclick="changeVisibilitySilver()" type="radio" name="color" id="silver">
+                        <input onclick="visibilitySilver()" type="radio" name="color" id="silver">
                     </div>
                     <br>
                     <p>Capacity: </p>
@@ -122,9 +122,136 @@
                 </form>
             </div>
         </div>
+        <div class="spec-desc">
+            <hr>
+            <h1>Specification</h1>
+            <div class="desc">
+                <div class="body">
+                    <h2>Body</h2>
+                    <p><b>Dimensions:</b> 143.6 x 70.9 x 7.7 mm (5.65 x 2.79 x 0.30 in) <br>
+                        <b>Weight:</b> 174 g (6.14 oz) <br>
+                        <b>Build:</b> Glass front (Gorilla Glass), glass back (Gorilla Glass), stainless steel frame
+                        <br>
+                        <b>SIM:</b> Nano-SIM
+                    </p>
+                </div>
+                <div class="platform">
+                    <h2>Platform</h2>
+                    <p><b>OS:</b> iOS 11.1.1, upgradable to iOS 15<br>
+                        <b>Chipset:</b> Apple A11 Bionic (10 nm)<br>
+                        <b>CPU:</b> Hexa-core 2.39 GHz (2x Monsoon + 4x Mistral)<br>
+                        <b>GPU:</b> Apple GPU (three-core graphics)
+                    </p>
+                </div>
+                <div class="camera">
+                    <h2>Camera</h2>
+                    <p><b>Rear Camera:</b> 12 MP, f/1.8, 28mm (wide), 1/3", 1.22Âµm, dual pixel PDAF, OIS<br>
+                        12 MP, f/2.4, 52mm (telephoto), 1/3.4", 1.0Âµm, PDAF, OIS, 2x optical zoom<br>
+                        <b>Selfie Camera:</b> 7 MP, f/2.2, 32mm (standard)<br>
+                        SL 3D, (depth/biometrics sensor)
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="in-box">
+                <h1>What's in the box: </h1>
+                <p>iPhone X, USB-C to Lightning Cable, Manual, VTech Gurantee Sticker</p>
+            </div>
+            <hr>
+        </div>
     </main>
+    <footer>
+        <div class="ftup">
+            <div class="aboutft">
+                <h4>About us</h4>
+                <a href="about.html" class="ftlink">about VTech</a>
+            </div>
+            <div class="csft">
+                <h4>Customer Service</h4>
+                <p>Email: support@vtech.com</p>
+            </div>
+            <div class="contactft">
+                <h4>Contact Us</h4>
+                <a href=""><img src="icon/icons8-whatsapp-100.png" alt=""><img src="" alt=""></a>
 
+            </div>
+            <div class="flwft">
+                <h4>Follow Us</h4>
+                <a href=""><img src="icon/icons8-twitter-100.png" alt=""></a>
+                <a href=""><img src="icon/icons8-instagram-100.png" alt=""></a>
+            </div>
+
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2023 - VTech Studio</p>
+
+
+
+    </footer>
     <script src="script.js"></script>
+    <script>
+        let gray = document.getElementById('gray');
+        let grayText = document.getElementById('gray-text');
+        let silver = document.getElementById('silver');
+        let silverText = document.getElementById('silver-text');
+
+        function visibilityGray() {
+            gray.style.opacity = '1';
+            silver.style.opacity = '0';
+            grayText.style.visibility = 'visible';
+            silverText.style.visibility = 'collapse';
+        }
+        function visibilitySilver() {
+            silver.style.opacity = '1';
+            gray.style.opacity = '0';
+            silverText.style.visibility = 'visible';
+            grayText.style.visibility = 'collapse';
+        }
+
+        function calculate() {
+            let total = 799;
+
+            let capacity1 = document.getElementById('64GB');
+            let capacity2 = document.getElementById('128GB');
+            let plusCapacity = 0;
+
+            if (capacity1.checked) {
+                plusCapacity = 0;
+            } else if (capacity2.checked) {
+                plusCapacity = 30;
+            }
+            total += plusCapacity;
+
+            let grade1 = document.getElementById('Fair');
+            let grade2 = document.getElementById('Good');
+            let grade3 = document.getElementById('Great');
+            let plusGrade = 0;
+
+            if (grade1.checked) {
+                plusGrade = 0
+            } else if (grade2.checked) {
+                plusGrade = 50;
+            } else if (grade3.checked) {
+                plusGrade = 80;
+            }
+            total += plusGrade;
+
+            let waranty1 = document.getElementById('6');
+            let waranty2 = document.getElementById('12');
+            let plusWaranty = 0;
+
+            if (waranty1.checked) {
+                plusWaranty = 0;
+            } else if (waranty2.checked) {
+                plusWaranty = 40;
+            }
+            total += plusWaranty;
+
+            let output = document.getElementById('output');
+            output.innerHTML = 'Total: RM' + total.toFixed(2);
+        }
+
+    </script>
 </body>
 
 </html>
