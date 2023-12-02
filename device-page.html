@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTech</title>
+    <link rel="icon" href="favicon_io/favicon.ico">
+    <link rel="stylesheet" href="device-page-style.css">
+</head>
+
+<body>
+    <header>
+        <div class="search-container">
+            <form action="">
+                <div class="search-box">
+                    <input type="search" class="search" placeholder="Search">
+                    <img src="icon/icons8-close-100(1).png" alt="" onclick="toggleSearch()">
+                </div>
+            </form>
+        </div>
+
+        <nav>
+            <div class="left">
+                <a href="main.html"><img src="icon/logo.png" alt="" style="height: 55px;
+                    padding: 5px;"></a>
+            </div>
+
+            <div class="center">
+                <a href="">View All</a>
+                <a href="">iPhone 14</a>
+                <a href="">iPhone 13</a>
+                <a href="">iPhone 12</a>
+                <a href="">iPhone 11</a>
+                <a href="">iPhone X</a>
+            </div>
+
+            <div class="right">
+                <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96 (1).png" alt=""><img
+                        src="icon/icons8-search-96.png" alt="" style="position: relative; right: 36px;"></a>
+                <a href="bag.html"><img src="icon/icons8-bag-96.png" alt=""><img src="icon/icons8-bag-96 (1).png" alt=""
+                        style="position: relative; right: 36px;"></a>
+                <a href="login.html"><img src="icon/icons8-account-96.png" alt=""><img
+                        src="icon/icons8-account-96 (1).png" alt="" style="position: relative; right: 36px;"></a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="device-preview">
+            <div class="image">
+                <img src="image/device preview/iphonex.png" alt="" id="gray">
+                <img src="image/device preview/iphonex2.png" alt="" id="silver" style="   opacity: 0;">
+            </div>
+
+            <div class="description">
+                <form action="" style="width: 100%;">
+                    <h1>iPhone X</h1>
+                    <div class="color-text">
+                        <div id="gray-text" style="visibility: visible;">
+                            <p>Color - space gray</p>
+                        </div>
+                        <div id="silver-text">
+                            <p>Color - silver</p>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="color-box">
+                        <input onclick="changeVisibilityGray()" type="radio" checked="checked" name="color" id="gray">
+                        <span></span> <!--separartion-->
+                        <input onclick="changeVisibilitySilver()" type="radio" name="color" id="silver">
+                    </div>
+                    <br>
+                    <p>Capacity: </p>
+                    <div class="spec">
+                        <label class="capacity">
+                            <input type="radio" name="capacity" value="64GB" id="64GB" onclick="calculate()">
+                            64GB
+                        </label>
+                        <span class="divider"></span>
+                        <label class="capacity">
+                            <input type="radio" name="capacity" value="128GB" id="128GB" onclick="calculate()">
+                            128GB
+                        </label>
+                    </div>
+                    <p>Refurbished Grading: </p>
+                    <div class="spec">
+                        <label class="grade">
+                            <input type="radio" name="grade" id="Fair" value="Fair" onclick="calculate()">
+                            Fair
+                        </label>
+                        <span class="divider"></span>
+                        <span></span>
+                        <label class="grade">
+                            <input type="radio" name="grade" id="Good" value="Good" onclick="calculate()">
+                            Good
+                        </label>
+                        <span class="divider"></span>
+                        <label class="grade">
+                            <input type="radio" name="grade" id="Great" value=" Great" onclick="calculate()">
+                            Great
+                        </label>
+                    </div>
+                    <p>Waranty: </p>
+                    <div class="spec">
+                        <label class="waranty">
+                            <input type="radio" name="waranty" id="6" value="6" onclick="calculate()">
+                            6 Months
+                        </label>
+                        <span class="divider"></span>
+                        <label class="waranty">
+                            <input type="radio" name="waranty" id="12" value="12" onclick="calculate()">
+                            12 Months
+                        </label>
+                    </div>
+                    <div class="total">
+                        <p id="output"></p>
+                    </div>
+                    <button type="submit" class="bag">Add to Bag</button>
+                    <button type="submit" class="checkout">Buy Now</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
