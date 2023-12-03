@@ -154,7 +154,6 @@ nav a {
 
 main {
     display: flex;
-    display: flex;
     flex-direction: column;
 }
 
@@ -371,6 +370,107 @@ span {
 .in-box p {
     width: 750px;
     font-size: 24px;
+}
+
+/* view device*/
+
+.box-title {
+    margin: 50px;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.big-title {
+    height: fit-content;
+    font-size: 40px;
+    font-weight: 500;
+    flex: 2;
+}
+
+.iPhone {
+    display: flex;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.iPhone>h1 {
+    margin: 30px 30px;
+    font-size: 50px;
+}
+
+.device-box {
+    display: flex;
+    justify-content: center;
+}
+
+.X-box {
+    height: 500px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+.preview {
+    background-color: #333;
+    padding: 20px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.preview>div {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    margin-top: 60px;
+    position: relative;
+    transition: ease-in-out .3s;
+}
+
+.X-box:hover .preview>div {
+    margin-top: -130px;
+}
+
+.X-box:hover .preview>img {
+    height: 350px;
+}
+
+.preview>img {
+    height: 250px;
+    display: block;
+    margin: 20px auto;
+    transition: .3s;
+}
+
+.preview~h2 {
+    margin: 10px 20px 0;
+    font-size: 28px;
+    color: white;
+}
+
+.preview~p {
+    color: white;
+    font-size: 20px;
+    margin: 10px 20px 0;
+}
+
+.color-preview {
+    display: flex;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.color-preview>div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: transparent;
 }
 
 footer {
