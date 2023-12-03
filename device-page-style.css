@@ -153,6 +153,7 @@ nav a {
 }
 
 main {
+    min-height: 900px;
     display: flex;
     flex-direction: column;
 }
@@ -374,13 +375,9 @@ span {
 
 /* view device*/
 
-.box-title {
+.big-title {
     margin: 50px;
     margin-bottom: 0;
-    display: flex;
-}
-
-.big-title {
     height: fit-content;
     font-size: 40px;
     font-weight: 500;

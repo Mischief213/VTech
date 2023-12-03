@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header class="main-header">
-
+    <header>
+        <!-- Search Box -->
         <div class="search-container">
             <form action="">
                 <div class="search-box">
@@ -21,20 +21,24 @@
             </form>
         </div>
 
+        <!-- Navigation Bar -->
         <nav>
             <div class="white-slide-down"> </div>
+            <!-- Home -->
             <a href="main.html"><img src="icon/logo.png" alt="" class="left" style="height: 55px;
                 padding: 5px;"></a>
 
+            <!-- Device Category -->
             <div class="center">
-                <a href="view-device.html" onclick="showAll()">View All</a>
-                <a href="view-device.html" onclick="showOnlyiPhone(iPhone14)">iPhone 14</a>
-                <a href="">iPhone 13</a>
-                <a href="">iPhone 12</a>
-                <a href="">iPhone 11</a>
-                <a href="">iPhone X</a>
+                <a href="view-device.html">View All</a>
+                <a href="view-device.html?series=iPhone14">iPhone 14</a>
+                <a href="view-device.html?series=iPhone13">iPhone 13</a>
+                <a href="view-device.html?series=iPhone12">iPhone 12</a>
+                <a href="view-device.html?series=iPhone11">iPhone 11</a>
+                <a href="view-device.html?series=iPhoneX">iPhone X</a>
             </div>
 
+            <!-- Right Icon -->
             <div class="right">
                 <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96 (1).png" alt=""><img
                         src="icon/icons8-search-96.png" alt="" style="position: relative; right: 36px;"></a>
@@ -43,7 +47,6 @@
                 <a href="login.html"><img src="icon/icons8-account-96.png" alt=""><img
                         src="icon/icons8-account-96 (1).png" alt="" style="position: relative; right: 36px;"></a>
             </div>
-
 
         </nav>
 
@@ -156,24 +159,32 @@
     </main>
 
     <footer>
-        <div class="aboutft">
-            <h4>About us</h4>
-            <a href="about.html" class="ftlink">about VTech</a>
-        </div>
-        <div class="csft">
-            <h4>Customer Service</h4>
-            <p>Email: support@vtech.com</p>
-        </div>
-        <div class="contactft">
-            <h4>Contact Us</h4>
-            <a href=""><img src="icon/icons8-whatsapp-100.png" alt=""><img src="" alt=""></a>
+        <div class="ftup">
+            <div class="aboutft">
+                <h4>About us</h4>
+                <a href="about.html" class="ftlink">about VTech</a>
+            </div>
+            <div class="csft">
+                <h4>Customer Service</h4>
+                <p>Email: support@vtech.com</p>
+            </div>
+            <div class="contactft">
+                <h4>Contact Us</h4>
+                <a href=""><img src="icon/icons8-whatsapp-100.png" alt=""><img src="" alt=""></a>
+
+            </div>
+            <div class="flwft">
+                <h4>Follow Us</h4>
+                <a href=""><img src="icon/icons8-twitter-100.png" alt=""></a>
+                <a href=""><img src="icon/icons8-instagram-100.png" alt=""></a>
+            </div>
 
         </div>
-        <div class="flwft">
-            <h4>Follow Us</h4>
-            <a href=""><img src="icon/icons8-twitter-100.png" alt=""></a>
-            <a href=""><img src="icon/icons8-instagram-100.png" alt=""></a>
-        </div>
+        <hr>
+        <p class="copyright">Copyright 2023 - VTech Studio</p>
+
+
+
     </footer>
 
     <script src="script.js"></script>

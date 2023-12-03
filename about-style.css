@@ -194,11 +194,18 @@ main {
 
 footer {
     border-top: solid 2px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+}
+
+.ftup {
     background-color: black;
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 200px;
+    height: 170px;
     padding-top: 40px;
     overflow: hidden;
 }
@@ -210,6 +217,11 @@ footer div {
 
 footer h4 {
     margin-bottom: 10px;
+}
+
+footer hr {
+    width: 90%;
+    margin-bottom: 25px;
 }
 
 .aboutft {
