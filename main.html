@@ -103,10 +103,15 @@
         </div>
         <div class="view-all-title">
             <h3 class="all-cate">Devices</h3>
-            <a href="" class="view-more">view more</a>
+            <a href="view-device.html" class="view-more">view more</a>
         </div>
 
         <div class="view-all">
+            <div class="arrow" id="arrow-left"><img width="50" height="50"
+                    src="https://img.icons8.com/ios/50/circled-chevron-left.png" alt="circled-chevron-left" /></div>
+            <div class="arrow" id="arrow-right"><img width="50" height="50"
+                    src="https://img.icons8.com/ios/50/000000/circled-chevron-right--v1.png"
+                    alt="circled-chevron-right--v1" /></div>
             <div class="iPhone-box">
                 <div class="preview"><img src="image/iphone-14-pro-max-removebg-preview.png" alt=""></div>
                 <h2>iPhone 14 Pro Max</h2>
@@ -188,6 +193,73 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- js script for horizontal scroll button -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the arrow element and the view-all container
+            const arrowLeft = document.getElementById('arrow-left');
+            const arrowRight = document.getElementById('arrow-right');
+            const viewAllContainer = document.querySelector('.view-all');
+            arrowRight.addEventListener('click', function () {
+                const currentScroll = viewAllContainer.scrollLeft;
+                const targetScroll = currentScroll + 300;
+                const duration = 500;
+                const startTime = performance.now();
+
+                function scrollAnimation(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const easedScroll = easeInOutQuad(elapsedTime, currentScroll, targetScroll - currentScroll, duration);
+
+                    viewAllContainer.scrollLeft = easedScroll;
+
+                    if (elapsedTime < duration) {
+                        requestAnimationFrame(scrollAnimation);
+                    }
+                }
+                arrowLeft.style.visibility = 'visible';
+
+                if (currentScroll > 800) {
+                    arrowRight.style.visibility = 'hidden';
+                }
+
+                requestAnimationFrame(scrollAnimation);
+            })
+
+            arrowLeft.addEventListener('click', function () {
+                const currentScroll = viewAllContainer.scrollLeft;
+                const targetScroll = currentScroll - 300;
+                const duration = 500;
+                const startTime = performance.now();
+
+                function scrollAnimation(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const easedScroll = easeInOutQuad(elapsedTime, currentScroll, targetScroll - currentScroll, duration);
+
+                    viewAllContainer.scrollLeft = easedScroll;
+
+                    if (elapsedTime < duration) {
+                        requestAnimationFrame(scrollAnimation);
+                    }
+                }
+                if (currentScroll <= 300) {
+                    arrowLeft.style.visibility = 'hidden';
+                }
+                if (currentScroll < 1200) {
+                    arrowRight.style.visibility = 'visible';
+                }
+
+                requestAnimationFrame(scrollAnimation);
+            });
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+        });
+
+    </script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 </body>

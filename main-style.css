@@ -22,7 +22,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    min-width: 1400px;
+    min-width: 1200px;
     margin: 0;
 }
 
@@ -42,7 +42,7 @@ nav {
     justify-content: center;
     overflow: hidden;
     z-index: 1;
-    min-width: 1400px;
+    min-width: 1200px;
 }
 
 .white-slide-down {
@@ -78,6 +78,8 @@ header .center {
     font-size: 18px;
 
 }
+
+.right {}
 
 .center>a {
     position: relative;
@@ -171,6 +173,8 @@ nav:hover .right a img:nth-child(2) {
     height: 25px;
     cursor: pointer;
     margin: 0 10px;
+    padding-left: 10px;
+    border-left: black 1px solid;
 }
 
 .search-container.active {
@@ -395,6 +399,28 @@ main hr {
     flex-wrap: nowrap;
 }
 
+.arrow {
+    align-self: center;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+#arrow-left {
+    left: 7%;
+    visibility: collapse;
+    transition: 0.3s;
+}
+
+#arrow-right {
+    right: 3%;
+    transition: 0.3s;
+}
 
 .iPhone-box {
     border: solid 3px black;
