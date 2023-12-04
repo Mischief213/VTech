@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
 
     <header>
         <!-- Admin - temp -->
@@ -105,7 +106,21 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             showLoginPopup();
+        });// login page
+        const wrapper = document.querySelector('.wrapper');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+        registerLink.addEventListener('click', () => {
+            wrapper.classList.add('active');
         });
+
+        loginLink.addEventListener('click', () => {
+            wrapper.classList.remove('active');
+        });
+
+        function showLoginPopup() {
+            wrapper.classList.add('active-popup');
+        }
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

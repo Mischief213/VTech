@@ -10,20 +10,9 @@ function toggleCancel() {
     cancelOrder.classList.toggle('active');
 }
 
-// login page
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-registerLink.addEventListener('click', () => {
-    wrapper.classList.add('active');
-});
+let loader = document.getElementById('preloader');
 
-loginLink.addEventListener('click', () => {
-    wrapper.classList.remove('active');
-});
-
-function showLoginPopup() {
-    wrapper.classList.add('active-popup');
-}
-
-
+window.addEventListener('load', function () {
+    loader.style.display = 'none';
+    loader.style.transition = '.5s';
+})

@@ -26,6 +26,17 @@ body {
     margin: 0;
 }
 
+#preloader {
+    background: black url(image/image_processing20210830-20178-1eg6b2f.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
 header {
     text-align: center;
     display: flex;
@@ -138,7 +149,6 @@ nav:hover .right a img:nth-child(2) {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.3s;
 }
 
 .search-logo {
@@ -179,12 +189,18 @@ nav:hover .right a img:nth-child(2) {
 
 .search-container.active {
     opacity: 100;
+    transition: .3s;
 }
 
 
 .search-container.active~nav {
     opacity: 0;
     visibility: collapse;
+    transition: .3s;
+}
+
+.search-container.active~nav .white-slide-down {
+    height: 70px;
 }
 
 .banner {
