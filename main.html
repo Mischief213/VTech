@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="main-style.css">
 </head>
 
-<body>
+<body id="body">
     <div id="preloader"></div>
     <header>
         <!-- Search Box -->
-        <div class="search-container">
-            <form action="">
+        <div class="search-container" id="scontain">
+            <form action="" id="searchForm">
                 <div class="search-box">
                     <input type="search" class="search" placeholder="Search">
-                    <img src="icon/icons8-close-100(1).png" alt="" onclick="toggleSearch()">
+                    <img src="icon/icons8-close-100(1).png" id="close" alt="" onclick="toggleSearch()">
                 </div>
             </form>
+
+            <div class="search-result" id="sresult">
+                <div class="result">
+
+                </div>
+                <div class="result">
+
+                </div>
+                <div class="result">
+
+                </div>
+            </div>
         </div>
 
         <!-- Navigation Bar -->
@@ -204,7 +216,7 @@
             const viewAllContainer = document.querySelector('.view-all');
             arrowRight.addEventListener('click', function () {
                 const currentScroll = viewAllContainer.scrollLeft;
-                const targetScroll = currentScroll + 300;
+                const targetScroll = currentScroll + 400;
                 const duration = 500;
                 const startTime = performance.now();
 
@@ -220,7 +232,7 @@
                 }
                 arrowLeft.style.visibility = 'visible';
 
-                if (currentScroll > 800) {
+                if (currentScroll > 700) {
                     arrowRight.style.visibility = 'hidden';
                 }
 
@@ -229,7 +241,7 @@
 
             arrowLeft.addEventListener('click', function () {
                 const currentScroll = viewAllContainer.scrollLeft;
-                const targetScroll = currentScroll - 300;
+                const targetScroll = currentScroll - 400;
                 const duration = 500;
                 const startTime = performance.now();
 
