@@ -1,3 +1,8 @@
+@font-face {
+    src: url(font/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+    font-family: Roboto-Mono;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +25,7 @@
 }
 
 body {
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto-Mono;
     color: white;
     min-width: 1200px;
     margin: 0;
@@ -93,6 +98,15 @@ nav:hover .center {
     color: black;
 }
 
+.view-iPhone {
+    padding: 3px;
+    border-bottom: transparent 3px solid;
+}
+
+.view-iPhone:hover {
+    border-bottom: black 3px solid;
+}
+
 .view-blur {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(1px);
@@ -125,17 +139,17 @@ nav:hover .center {
 .iPhone-container.active {
     visibility: visible;
     height: 10%;
+    cursor: default;
 }
 
 .iPhone-container.active a {
     opacity: 1;
-
 }
 
 .iPhone-container>a {
     position: relative;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     opacity: 0;
     transition: .2s;
@@ -173,6 +187,56 @@ nav:hover .center {
 
 nav:hover .right a img:nth-child(2) {
     opacity: 1;
+}
+
+.cart-sidebar {
+    background: #1f1f1f;
+    height: 100vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    position: absolute;
+    right: -30%;
+    transition: .5s;
+    opacity: 0;
+}
+
+.cart-sidebar h2 {
+    align-self: baseline;
+    margin: 20px;
+}
+
+.cart-item {
+    width: 90%;
+    height: 60%;
+}
+
+.cart-link {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.cart-sidebar a {
+    border: 1px solid white;
+    padding: 15px 50px;
+    border-radius: 5px;
+}
+
+.cart-sidebar a:hover {
+    background-color: white;
+    color: #1f1f1f;
+}
+
+.cart-sidebar.active {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
 }
 
 .search-container {
@@ -226,7 +290,6 @@ nav:hover .right a img:nth-child(2) {
     padding: 10px;
     width: 95%;
     height: 100%;
-
 }
 
 .search-container img {
@@ -261,7 +324,6 @@ nav:hover .right a img:nth-child(2) {
     background-color: white;
     height: 0;
     width: 100%;
-    padding: 20px;
     transition: .5s;
 }
 
@@ -304,7 +366,7 @@ nav:hover .right a img:nth-child(2) {
     font-size: 24px;
     text-align: left;
     position: relative;
-    left: -30px;
+    left: -70px;
 }
 
 .banner-1-title p {
@@ -538,13 +600,6 @@ main hr {
     margin: 0 auto;
 }
 
-.preview~h2,
-.preview~p,
-.preview~a {
-    text-decoration: none;
-    color: white;
-}
-
 .preview~h2 {
     font-size: 28px;
 }
@@ -562,8 +617,9 @@ main hr {
 }
 
 .preview~a {
+    text-decoration: none;
     position: relative;
-    color: #fff;
+    color: #4284ff;
     font-weight: 500;
     margin: 0 20px;
 }
@@ -575,7 +631,7 @@ main hr {
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: #fff;
+    background: #4284ff;
     border-radius: 5px;
     transform-origin: right;
     transform: scaleX(0);
@@ -599,13 +655,13 @@ main hr {
 
 .assurance div:nth-child(1) {
     text-align: left;
-    font-size: 26px;
+    font-size: 24px;
     width: 44%;
 }
 
 .assurance div:nth-child(1) p {
     text-align: left;
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 40px;
 }
 

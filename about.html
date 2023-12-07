@@ -34,13 +34,32 @@
             </div>
         </div>
 
-        <nav>
-            <div class="left">
-                <a href="main.html"><img src="icon/logo.png" alt="" style="height: 55px;
-                    padding: 5px;"></a>
+        <!-- Navigation Bar -->
+        <nav id="nav-bar">
+            <!-- Home -->
+            <a href="main.html"><img src="icon/logo.png" alt="" class="left" style="height: 55px;
+            padding: 5px;"></a>
+
+            <!-- Device Category -->
+            <div class="center">
+                <div class="view-iPhone" onclick="viewiPhone()">
+                    View iPhone
+                </div>
             </div>
 
-            <div class="center">
+            <!-- Right Icon -->
+            <div class="right">
+                <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96.png" alt=""
+                        style="position: relative; right: 36px;"></a>
+                <a onclick="viewCart()" style="cursor: pointer;"><img src="icon/icons8-cart-96.png" alt=""
+                        style="position: relative; right: 36px;"></a>
+                <a href="login.html"><img src="icon/icons8-account-96 (1).png" alt=""
+                        style="position: relative; right: 36px;"></a>
+            </div>
+
+        </nav>
+        <div class="view-blur" id="viewBlur" onclick="viewiPhone()">
+            <div class="iPhone-container" id="view">
                 <a href="view-device.html">View All</a>
                 <a href="view-device.html?series=iPhone14">iPhone 14</a>
                 <a href="view-device.html?series=iPhone13">iPhone 13</a>
@@ -48,17 +67,21 @@
                 <a href="view-device.html?series=iPhone11">iPhone 11</a>
                 <a href="view-device.html?series=iPhoneX">iPhone X</a>
             </div>
+        </div>
 
-            <div class="right">
-                <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96 (1).png" alt=""><img
-                        src="icon/icons8-search-96.png" alt="" style="position: relative; right: 36px;"></a>
-                <a href="bag.html"><img src="icon/icons8-bag-96.png" alt=""><img src="icon/icons8-bag-96 (1).png" alt=""
-                        style="position: relative; right: 36px;"></a>
-                <a href="login.html"><img src="icon/icons8-account-96.png" alt=""><img
-                        src="icon/icons8-account-96 (1).png" alt="" style="position: relative; right: 36px;"></a>
+        <div class="view-blur" id="viewBlur">
+            <div class="cart-sidebar" id="cart-sbar">
+                <h2>Cart</h2>
+                <div class="cart-item">
+
+                </div>
+                <div class="cart-link">
+                    <a href="bag.html">View Cart</a>
+                    <a href="checkout.html">Checkout</a>
+
+                </div>
             </div>
-
-        </nav>
+        </div>
     </header>
     <main>
         <div class="intro">

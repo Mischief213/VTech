@@ -1,3 +1,8 @@
+@font-face {
+    src: url(font/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+    font-family: Roboto-Mono;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +25,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto-Mono;
     color: black;
     min-width: 1400px;
     margin: 0;
