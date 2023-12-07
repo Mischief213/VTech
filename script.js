@@ -27,3 +27,14 @@ search.addEventListener('click', function () {
 searchClose.addEventListener('click', function () {
     result.style.height = '0';
 })
+
+var head = document.getElementById('head');
+var view = document.getElementById('view');
+var viewBlur = document.getElementById('viewBlur');
+let wslidedown = document.getElementById('wslide');
+
+function viewiPhone() {
+    view.classList.toggle('active');
+    viewBlur.classList.toggle('blur');
+    body.style.overflow = body.style.overflow === 'hidden' ? 'visible' : 'hidden';
+}

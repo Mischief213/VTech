@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     min-width: 1200px;
     margin: 0;
@@ -69,9 +69,6 @@ nav:hover .white-slide-down {
     height: 70px;
 }
 
-nav:hover a {
-    color: black;
-}
 
 header a {
     text-decoration: none;
@@ -85,41 +82,82 @@ header .left {
 }
 
 header .center {
-    margin: 0 100px;
+    margin: 0 80px 0 600px;
     font-size: 18px;
-
-}
-
-.right {}
-
-.center>a {
-    position: relative;
-    color: #fff;
     font-weight: 500;
-    margin: 0 20px;
+    z-index: 1;
+    cursor: pointer;
 }
 
-.center>a::after {
+nav:hover .center {
+    color: black;
+}
+
+.view-blur {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    z-index: 5;
+    visibility: hidden;
+}
+
+.view-blur.blur {
+    visibility: visible;
+}
+
+.iPhone-container {
+    border: #a3a3a3 1px solid;
+    background-color: white;
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    visibility: hidden;
+    z-index: 5;
+    transition: .3s;
+}
+
+.iPhone-container.active {
+    visibility: visible;
+    height: 10%;
+}
+
+.iPhone-container.active a {
+    opacity: 1;
+
+}
+
+.iPhone-container>a {
+    position: relative;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0;
+    transition: .2s;
+}
+
+.iPhone-container>a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: #fff;
+    background: black;
     border-radius: 5px;
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .5s;
 }
 
-.center>a:hover::after {
+.iPhone-container>a:hover::after {
     transform-origin: left;
     transform: scaleX(1);
-}
-
-nav:hover .center>a::after {
-    background: black;
 }
 
 
@@ -291,11 +329,12 @@ nav:hover .right a img:nth-child(2) {
 .banner-1-desc a {
     border-bottom: solid 3px black;
     text-decoration: none;
-    color: white;
+    color: hsl(219, 100%, 63%);
+    border-bottom: solid 3px #4284ff;
 }
 
 .banner-1-desc a:hover {
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px #4284ff;
 }
 
 .banner-1-desc a::after {
@@ -369,12 +408,17 @@ main hr {
     font-size: 60px;
 }
 
-#iPhoneX p,
-#iPhoneX a {
+.iPhone-promo-desc p {
     padding: 10px;
     font-size: 25px;
+}
+
+.iPhone-promo-desc a {
     text-decoration: none;
-    color: white;
+    padding: 2px;
+    font-size: 25px;
+    color: #4284ff;
+    border-bottom: solid 3px #4284ff;
 }
 
 #iPhone11 img {
@@ -386,20 +430,13 @@ main hr {
     font-size: 60px;
 }
 
-#iPhone11 p,
-#iPhone11 a {
-    padding: 10px;
-    font-size: 25px;
-    text-decoration: none;
-    color: white;
-}
 
 .iPhone-promo a {
     transition: .3s;
 }
 
 .iPhone-promo a:hover {
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px #4284ff;
 }
 
 .iPhone-promo a::after {
@@ -427,17 +464,17 @@ main hr {
 }
 
 .view-more {
-    color: black;
+    color: #4284ff;
+    border-bottom: solid 2px #4284ff;
     font-size: 22px;
     font-weight: 500;
     text-decoration: none;
-    border-bottom: solid 2px white;
     padding-bottom: 3px;
     transition: .3s;
 }
 
 .view-more:hover {
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #4284ff;
 }
 
 .view-all {
@@ -452,6 +489,7 @@ main hr {
 }
 
 .arrow {
+    padding: 5px;
     align-self: center;
     background-color: white;
     border-radius: 50%;
@@ -461,6 +499,11 @@ main hr {
     justify-content: center;
     cursor: pointer;
     position: absolute;
+}
+
+.arrow>img {
+    height: 30px;
+    width: 30px;
 }
 
 #arrow-left {
@@ -608,9 +651,9 @@ footer hr {
     width: 10%;
 }
 
-
-.aboutft a:hover {
-    border-bottom: white 1px solid;
+.aboutft a {
+    color: #4284ff;
+    border-bottom: #4284ff 1px solid;
 }
 
 .csft {

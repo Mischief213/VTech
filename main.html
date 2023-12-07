@@ -35,13 +35,19 @@
         </div>
 
         <!-- Navigation Bar -->
-        <nav>
-            <div class="white-slide-down"> </div>
+        <nav id="nav-bar">
+            <div class="white-slide-down" id="wslide"> </div>
             <!-- Home -->
             <a href="main.html"><img src="icon/logo.png" alt="" class="left" style="height: 55px;
                 padding: 5px;"></a>
 
             <!-- Device Category -->
+            <div class="center">
+                <div class="view-iPhone" onclick="viewiPhone()">
+                    View iPhone
+                </div>
+            </div>
+            <!--
             <div class="center">
                 <a href="view-device.html">View All</a>
                 <a href="view-device.html?series=iPhone14">iPhone 14</a>
@@ -49,19 +55,30 @@
                 <a href="view-device.html?series=iPhone12">iPhone 12</a>
                 <a href="view-device.html?series=iPhone11">iPhone 11</a>
                 <a href="view-device.html?series=iPhoneX">iPhone X</a>
-            </div>
+            </div>-->
 
             <!-- Right Icon -->
             <div class="right">
                 <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96 (1).png" alt=""><img
                         src="icon/icons8-search-96.png" alt="" style="position: relative; right: 36px;"></a>
-                <a href="bag.html"><img src="icon/icons8-bag-96.png" alt=""><img src="icon/icons8-bag-96 (1).png" alt=""
-                        style="position: relative; right: 36px;"></a>
+                <a href="bag.html"><img src="icon/icons8-cart-96 (1).png" alt=""><img src="icon/icons8-cart-96.png"
+                        alt="" style="position: relative; right: 36px;"></a>
                 <a href="login.html"><img src="icon/icons8-account-96.png" alt=""><img
                         src="icon/icons8-account-96 (1).png" alt="" style="position: relative; right: 36px;"></a>
             </div>
 
         </nav>
+        <div class="view-blur" id="viewBlur">
+            <div class="iPhone-container" id="view">
+                <a href="view-device.html">View All</a>
+                <a href="view-device.html?series=iPhone14">iPhone 14</a>
+                <a href="view-device.html?series=iPhone13">iPhone 13</a>
+                <a href="view-device.html?series=iPhone12">iPhone 12</a>
+                <a href="view-device.html?series=iPhone11">iPhone 11</a>
+                <a href="view-device.html?series=iPhoneX">iPhone X</a>
+            </div>
+        </div>
+
 
     </header>
 
@@ -121,10 +138,9 @@
 
         <div class="view-all">
             <div class="arrow" id="arrow-left"><img width="50" height="50"
-                    src="https://img.icons8.com/ios/50/circled-chevron-left.png" alt="circled-chevron-left" /></div>
+                    src="https://img.icons8.com/ios-filled/50/back.png" alt="back" /></div>
             <div class="arrow" id="arrow-right"><img width="50" height="50"
-                    src="https://img.icons8.com/ios/50/000000/circled-chevron-right--v1.png"
-                    alt="circled-chevron-right--v1" /></div>
+                    src="https://img.icons8.com/ios-filled/50/forward--v1.png" alt="forward--v1" /></div>
             <div class="iPhone-box">
                 <div class="preview"><img src="image/iphone-14-pro-max-removebg-preview.png" alt=""></div>
                 <h2>iPhone 14 Pro Max</h2>
@@ -255,7 +271,7 @@
                         requestAnimationFrame(scrollAnimation);
                     }
                 }
-                if (currentScroll <= 300) {
+                if (currentScroll <= 500) {
                     arrowLeft.style.visibility = 'hidden';
                 }
                 if (currentScroll < 1200) {

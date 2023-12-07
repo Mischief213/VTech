@@ -110,6 +110,7 @@ main>div:nth-child(1) {
 /* device page */
 
 .device-preview {
+    border: 1px white solid;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -118,34 +119,35 @@ main>div:nth-child(1) {
 }
 
 .image {
+    border: 1px white solid;
     border-radius: 10px;
     margin: 5% 3%;
     display: flex;
     align-content: center;
     justify-content: center;
-    height: 700px;
     width: 600px;
     padding: 70px 130px 55px;
 }
 
 .image>img {
-    height: 550px;
+    height: 450px;
     position: absolute;
     transition: .5s;
     z-index: -1;
 }
 
 .description {
+    border: 1px white solid;
     display: flex;
     margin-left: 50px;
     margin: 3% 0;
-    padding: 40px;
+    padding: 20px 40px;
     width: 40%;
 }
 
 .description h1 {
     font-size: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .description input {
