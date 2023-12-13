@@ -22,6 +22,9 @@
             </form>
 
             <div class="search-result" id="sresult">
+                <div id="no-input">
+                    <h2>Search any iPhone you'll like, We'll wait.</h2>
+                </div>
                 <div class="result">
 
                 </div>
@@ -47,27 +50,23 @@
                     View iPhone
                 </div>
             </div>
-            <!--
-            <div class="center">
-                <a href="view-device.html">View All</a>
-                <a href="view-device.html?series=iPhone14">iPhone 14</a>
-                <a href="view-device.html?series=iPhone13">iPhone 13</a>
-                <a href="view-device.html?series=iPhone12">iPhone 12</a>
-                <a href="view-device.html?series=iPhone11">iPhone 11</a>
-                <a href="view-device.html?series=iPhoneX">iPhone X</a>
-            </div>-->
-
             <!-- Right Icon -->
             <div class="right">
                 <a class="search-logo" onclick="toggleSearch()"><img src="icon/icons8-search-96 (1).png" alt=""><img
                         src="icon/icons8-search-96.png" alt="" style="position: relative; right: 36px;"></a>
                 <a onclick="viewCart()" style="cursor: pointer;"><img src="icon/icons8-cart-96 (1).png" alt=""><img
                         src="icon/icons8-cart-96.png" alt="" style="position: relative; right: 36px;"></a>
-                <a href="login.html"><img src="icon/icons8-account-96.png" alt=""><img
+                <a onclick="viewProfile()" style="cursor: pointer;"><img src="icon/icons8-account-96.png" alt=""><img
                         src="icon/icons8-account-96 (1).png" alt="" style="position: relative; right: 36px;"></a>
             </div>
 
         </nav>
+        <div class="profile-box" id="prbox">
+            <h4>username: </h4>
+            <a href="" class="view-profile">View Profile</a>
+            <a href="" class="logout">Logout</a>
+        </div>
+
         <div class="view-blur" id="viewBlur" onclick="viewiPhone()">
             <div class="iPhone-container" id="view">
                 <a href="view-device.html">View All</a>

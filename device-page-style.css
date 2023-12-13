@@ -110,7 +110,6 @@ main>div:nth-child(1) {
 /* device page */
 
 .device-preview {
-    border: 1px white solid;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -119,8 +118,6 @@ main>div:nth-child(1) {
 }
 
 .image {
-    border: 1px white solid;
-    border-radius: 10px;
     margin: 5% 3%;
     display: flex;
     align-content: center;
@@ -137,7 +134,6 @@ main>div:nth-child(1) {
 }
 
 .description {
-    border: 1px white solid;
     display: flex;
     margin-left: 50px;
     margin: 3% 0;
@@ -179,13 +175,6 @@ span {
     z-index: -1;
 }
 
-#gray[type='radio']::before {
-    background-color: gray;
-}
-
-#silver[type='radio']::before {
-    background-color: silver;
-}
 
 .color-box>input[type='radio']:checked::before {
     border: 2px solid white;
@@ -200,9 +189,8 @@ span {
 .color-text div {
     position: absolute;
     visibility: collapse;
-    width: 200px;
+    width: 300px;
 }
-
 
 .spec {
     display: flex;
@@ -312,6 +300,10 @@ span {
 .desc p {
     font-size: 17px;
     line-height: 35px;
+}
+
+.desc div {
+    width: 30%;
 }
 
 .in-box {
