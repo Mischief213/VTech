@@ -3,37 +3,11 @@
 
     $deviceID = $_GET['id'];
 
-    
-    $sql = "SELECT Name FROM device WHERE DeviceID = $deviceID";
-    $resultName = mysqli_query($conn, $sql) OR die('Query Failed');
+    $sql = "SELECT * From device WHERE DeviceID = $deviceID";
+    $result = mysqli_query($conn, $sql) OR die('Query Failed');
 
-    $queryBody = "SELECT dimension, weight, build, sim FROM device WHERE DeviceID = $deviceID";
-    $resultBody = mysqli_query($conn, $queryBody) OR die('Query Failed');
-
-    $queryPlatform = "SELECT os, chipset, cpu, gpu FROM device WHERE DeviceID = $deviceID";
-    $resultPlatform = mysqli_query($conn, $queryPlatform) OR die('Query Failed');
-
-    $queryCamera = "SELECT rear, selfie FROM device WHERE DeviceID = $deviceID";
-    $resultCamera = mysqli_query($conn, $queryCamera) OR die('Query Failed');
-
-    $queryWintb = "SELECT wintb FROM device WHERE DeviceID = $deviceID";
-    $resultWintb = mysqli_query($conn, $queryWintb) OR die('Query Failed');
-
-    $queryPrice = "SELECT price FROM device WHERE DeviceID = $deviceID";
-    $resultPrice = mysqli_query($conn, $queryPrice) OR die('Query Failed');
-
-
-    $queryColorText = "SELECT DeviceColorText FROM deviceattributes WHERE DeviceID = $deviceID";
-    $resultColorText = mysqli_query($conn, $queryColorText) OR die('Query Failed');
-
-    $queryColor = "SELECT DeviceColor FROM deviceattributes WHERE DeviceID = $deviceID";
-    $resultColor = mysqli_query($conn, $queryColor) OR die('Query Failed');
-
-    $queryCapacity = "SELECT DeviceCapacity FROM deviceattributes WHERE DeviceID = $deviceID";
-    $resultCapacity = mysqli_query($conn, $queryCapacity) OR die('Query Failed');
-
-    $queryImageColor = "SELECT ImageColor, AttributesID FROM deviceattributes WHERE DeviceID = $deviceID";
-    $resultImageColor = mysqli_query($conn, $queryImageColor) OR die('Query Failed');
+    $sqlMulti = "SELECT * FROM deviceattributes WHERE DeviceID = $deviceID";
+    $resultMulti = mysqli_query($conn, $sqlMulti) OR die('Query Failed');
 
     $conn->close();
 ?>
@@ -51,11 +25,12 @@
 
 <style>
 <?php
-foreach($resultColor as $row){
+foreach($resultMulti as $row){
     echo "#". $row["DeviceColor"] ."[type='radio']::before {
         background-color: ". $row["DeviceColor"] .";
         }";
     }
+mysqli_data_seek($resultMulti, 0);
  ?>
 </style>
 
@@ -137,72 +112,58 @@ foreach($resultColor as $row){
     <main>
         <div class="device-preview">
             <div class="image">
-                <?php
-                $index = 0;
-                foreach($resultImageColor as $row){
-                    $index++;
-                    echo'<img src="'. $row['ImageColor'] .'" alt="" id="text'. $index .'" ">';
-                }
-                ?>
-                <img src="image/device preview/iphonex2.png" alt="" id="silver" style="opacity: 0;">
+            <?php
+            $row = $resultMulti->fetch_assoc();
+            echo '<img src="'. $row['ImageColor'] .'" alt="" id="img'. $row['DeviceColor'] .'" class="color-image" style="visibility: visible; opacity: 1">';
+
+            while($row = $resultMulti->fetch_assoc()){
+                echo '<img src="'. $row['ImageColor'] .'" alt="" id="img'. $row['DeviceColor'] .'" class="color-image">';
+            }
+            mysqli_data_seek($resultMulti,0);
+            ?>
             </div>
 
             <div class="description">
                 <form action="" style="width: 100%;">
                     <?php
-                    $row = $resultName->fetch_assoc();
+                    $row = $result->fetch_assoc();
                     echo '<h1 id="title">'. $row['Name'] .'</h1>';
+                    mysqli_data_seek($result,0);
                     ?>
                     <div class="color-text">
                         <?php
-                        $index = 1;
-                        $row = $resultColorText->fetch_assoc();
-                        echo '<div id="text'. $index .'" style="visibility: visible;">
+                        $row = $resultMulti->fetch_assoc();
+                        echo '<div id="text'. $row['DeviceColor'] .'" class="color-text" style="visibility: visible;">
                                 <p>Color - ' . $row['DeviceColorText'] . '</p>
                             </div>';
 
-                        /*$index++;
-                        $row = $resultColorText->fetch_assoc();
-                        echo '<div id="text'. $index .'">
+                        while ($row = $resultMulti->fetch_assoc()) {
+                            echo '<div id="text'. $row['DeviceColor'] .'" class="color-text">
                             <p>Color - ' . $row['DeviceColorText'] . '</p>
-                            </div>';*/
-
-                        if ($resultColorText->fetch_assoc() != null) {
-                            foreach ($resultColorText as $row) {
-                                $index++;
-                                echo '<div id="text'. $index .'">
-                                <p>Color - ' . $row['DeviceColorText'] . '</p>
-                                </div>';
-                            }
+                            </div>';
                         }
-
-                        /*if ($resultColorText->fetch_assoc() != null) {
-                            $index++;
-                            $row = $resultColorText->fetch_assoc();
-                            echo '<div id="text'. $index .'>
-                            <p>Color - ' . $row['DeviceColorText'] . '</p>
-                            </div>';
-                        }*/
-                        
+                        mysqli_data_seek($resultMulti,0);
                         ?>
                     </div>
                     <br><br>
                     <div class="color-box">
-                        <?php
-                        $index = 0;
-                        foreach($resultColor as $row){
-                            $index++;
-                            echo '<input onclick="visibility()" type="radio" name="color" id="'. $row['DeviceColor'] .'">
-                                    <span></span> <!--separartion-->';
-                        }
-                        mysqli_data_seek($resultColor,0);
-                        ?>
+                    <?php
+                    $row = $resultMulti->fetch_assoc();
+                    echo '<input type="radio" name="color" onclick="visibility(\''. $row['DeviceColor'] .'\')"id="'. $row['DeviceColor'] .'" checked="checked" style="visibility: visible;">
+                    <span></span> <!--separartion-->';
+
+                    while($row = $resultMulti->fetch_assoc()){
+                        echo '<input type="radio" name="color" onclick="visibility(\''. $row['DeviceColor'] .'\')" id="'. $row['DeviceColor'] .'" style="visibility: visible;">
+                        <span></span> <!--separartion-->';
+                    }
+                    mysqli_data_seek($resultMulti,0);
+                    ?>
                     </div>
                     <br>
                     <p>Capacity: <span id="plusCapacityText" style="font-size: 18px;"></span></p>
                     <div class="spec">
                         <?php
-                            foreach ($resultCapacity as $row) {
+                            foreach ($resultMulti as $row) {
                                 if ($row['DeviceCapacity'] != null) {
                                     echo '<label class="capacity">
                                     <input type="radio" name="capacity" value="'. $row['DeviceCapacity'] .'" id="'. $row['DeviceCapacity'] .'" onclick="calculate()">
@@ -211,25 +172,14 @@ foreach($resultColor as $row){
                                     <span class="divider"></span>';
                                 }
                             }
+                            mysqli_data_seek($resultMulti,0);
                         ?>
-                    </div>
-                    <p>Refurbished Grading: <span id="plusGradeText" style="font-size: 18px;"></span></p>
-                    <div class="spec">
-                        <label class="grade">
-                            <input type="radio" name="grade" id="Fair" value="Fair" onclick="calculate()">
-                            Fair
-                        </label>
-                        <span class="divider"></span>
-                        <span></span>
-                        <label class="grade">
-                            <input type="radio" name="grade" id="Good" value="Good" onclick="calculate()">
-                            Good
-                        </label>
-                        <span class="divider"></span>
-                        <label class="grade">
-                            <input type="radio" name="grade" id="Great" value=" Great" onclick="calculate()">
-                            Great
-                        </label>
+                        <div class="dummy-spec" style="position: absolute; visibility: collapse; " >
+                        <input type="radio" value="" id="64GB">
+                        <input type="radio" value="" id="128GB">
+                        <input type="radio" value="" id="256GB">
+                        <input type="radio" value="" id="512GB">
+                        </div>
                     </div>
                     <p>Waranty: <span id="plusWarantyText" style="font-size: 18px;"></span></p>
                     <div class="spec">
@@ -258,33 +208,36 @@ foreach($resultColor as $row){
                 <div class="body">
                     <h2>Body</h2>
                     <?php
-                    $row = $resultBody->fetch_assoc();
+                    $row = $result->fetch_assoc();
                     echo '<p><b>Dimensions:</b> '. $row['dimension'] .'<br>
                         <b>Weight:</b> '. $row['weight'] .'<br>
                         <b>Build:</b> Glass front (Gorilla Glass), glass back (Gorilla Glass), stainless steel frame
                         <br>
                         <b>SIM:</b> '. $row['sim'] .'
-                        </p>'
+                        </p>';
+                        mysqli_data_seek($result,0);
                     ?>
                 </div>
                 <div class="platform">
                     <h2>Platform</h2>
                     <?php
-                    $row = $resultPlatform->fetch_assoc();
+                    $row = $result->fetch_assoc();
                     echo '<p><b>OS:</b> '. $row['os'] .'<br>
                             <b>Chipset:</b> '. $row['chipset'] .'<br>
                             <b>CPU:</b> '. $row['cpu'] .'<br>
                             <b>GPU:</b> '. $row['gpu'] .'
-                        </p>'
+                        </p>';
+                        mysqli_data_seek($result,0);
                     ?>
                 </div>
                 <div class="camera">
                     <h2>Camera</h2>
                     <?php
-                    $row = $resultCamera->fetch_assoc();
+                    $row = $result->fetch_assoc();
                     echo '<p><b>Rear Camera:</b> '. $row['rear'] .'<br>
                             <b>Selfie Camera:</b> '. $row['selfie'] .'
-                        </p>'
+                        </p>';
+                        mysqli_data_seek($result,0);
                     ?>
                 </div>
             </div>
@@ -292,8 +245,9 @@ foreach($resultColor as $row){
             <div class="in-box">
                 <h1>What's in the box: </h1>
                 <?php
-                $row = $resultWintb->fetch_assoc();
-                echo '<p>'. $row['wintb'] .'</p>'
+                $row = $result->fetch_assoc();
+                echo '<p>'. $row['wintb'] .'</p>';
+                mysqli_data_seek($result,0);
                 ?>
             </div>
             <hr>
@@ -330,52 +284,38 @@ foreach($resultColor as $row){
 
     <script src="script.js"></script>
     <script>
-        <?php
-        $visibilityFunction = "function visibility() {";
-        $index = 0;
-
-        foreach ($resultColor as $row) {
-            $index++;
-            $visibilityFunction .= "let radio = document.getElementById(" . json_encode($row['DeviceColor']) . ");
-                                    let textImage = document.getElementById(" . $index . ");
-                                    if (radio.checked === true) {
-                                        textImage.style.visibility = 'visible';
-                                    } else {
-                                        textImage.style.visibility = 'hidden';
-                                    }";
-        }
-
-        $visibilityFunction .= "}";
-        echo $visibilityFunction;
-        ?>
         
+        function visibility(color) {
+            // Hide all color boxes initially
+            document.querySelectorAll('.color-image').forEach(function (box) {
+                box.style.visibility = 'hidden';
+                box.style.opacity = '0';
+            });document.querySelectorAll('.color-text').forEach(function (box) {
+                box.style.visibility = 'hidden';
+            });
 
-        let gray = document.getElementById('gray');
-        let grayText = document.getElementById('gray-text');
-        let silver = document.getElementById('silver');
-        let silverText = document.getElementById('silver-text');
+            // Show the selected color box
+            let selectedImg = document.getElementById('img' + color);
+            let selectedText = document.getElementById('text' + color);
 
-        function visibilityGray() {
-            gray.style.opacity = '1';
-            silver.style.opacity = '0';
-            grayText.style.visibility = 'visible';
-            silverText.style.visibility = 'collapse';
-        }
-        function visibilitySilver() {
-            silver.style.opacity = '1';
-            gray.style.opacity = '0';
-            silverText.style.visibility = 'visible';
-            grayText.style.visibility = 'collapse';
+            if (selectedImg && selectedText) {
+                selectedImg.style.visibility = 'visible';
+                selectedImg.style.opacity = '1';
+                selectedText.style.visibility = 'visible';
+            }
         }
 
         function calculate() {
             <?php
-                $row = $resultPrice->fetch_assoc();
+                $row = $result->fetch_assoc();
                 echo 'let total = '. $row['price'] .';';
+                mysqli_data_seek($result,0);
             ?>
 
             let capacity1 = document.getElementById('64GB');
             let capacity2 = document.getElementById('128GB');
+            let capacity3 = document.getElementById('256GB');
+            let capacity4 = document.getElementById('512GB');
             let plusCapacity = 0;
 
             if (capacity1.checked) {
@@ -384,25 +324,14 @@ foreach($resultColor as $row){
             } else if (capacity2.checked) {
                 plusCapacity = 30;
                 document.getElementById('plusCapacityText').innerHTML = '+RM' + plusCapacity;
+            }else if (capacity3.checked) {
+                plusCapacity = 50;
+                document.getElementById('plusCapacityText').innerHTML = '+RM' + plusCapacity;
+            }else if (capacity4.checked) {
+                plusCapacity = 60;
+                document.getElementById('plusCapacityText').innerHTML = '+RM' + plusCapacity;
             }
             total += plusCapacity;
-
-            let grade1 = document.getElementById('Fair');
-            let grade2 = document.getElementById('Good');
-            let grade3 = document.getElementById('Great');
-            let plusGrade = 0;
-
-            if (grade1.checked) {
-                plusGrade = 0
-                document.getElementById('plusGradeText').innerHTML = '';
-            } else if (grade2.checked) {
-                plusGrade = 50;
-                document.getElementById('plusGradeText').innerHTML = '+RM' + plusGrade;
-            } else if (grade3.checked) {
-                plusGrade = 80;
-                document.getElementById('plusGradeText').innerHTML = '+RM' + plusGrade;
-            }
-            total += plusGrade;
 
             let waranty1 = document.getElementById('6');
             let waranty2 = document.getElementById('12');
@@ -412,7 +341,7 @@ foreach($resultColor as $row){
                 plusWaranty = 0;
                 document.getElementById('plusWarantyText').innerHTML = '';
             } else if (waranty2.checked) {
-                plusWaranty = 40;
+                plusWaranty = 20;
                 document.getElementById('plusWarantyText').innerHTML = '+RM' + plusWaranty;
             }
             total += plusWaranty;

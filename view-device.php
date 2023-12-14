@@ -103,7 +103,7 @@ $conn -> close();
         <div class="iPhone" id="iPhone14">
             <h1>iPhone 14 Series</h1>
             <div class="device-box">
-                <a href="device-page.html" onclick="iPhone('XIV')" class="X-box" style="text-decoration: none;">
+                <a href="" onclick="iPhone('XIV')" class="X-box" style="text-decoration: none;">
                     <div class="preview">
                         <img src="image/XIV/14/iphone-14-Midnight.png" alt="">
                         <div class="view-box">View</div>
@@ -117,7 +117,7 @@ $conn -> close();
                     <h2>iPhone 14</h2>
                     <p>From RM2,799</p>
                 </a>
-                <a href="device-page.html" onclick="iPhone('XIVPlus')" class="X-box" style="text-decoration: none;">
+                <a href="" onclick="iPhone('XIVPlus')" class="X-box" style="text-decoration: none;">
                     <div class="preview">
                         <img src="image/XIV/14/iphone-14-Red.png" alt="">
                         <div class="view-box">View</div>
@@ -368,46 +368,6 @@ $conn -> close();
                     </div>
                     <h2>iPhone X</h2>
                     <p>From RM799</p>
-                </a>
-                <a href="" class="X-box" style="text-decoration: none;">
-                    <div class="preview">
-                        <img src="image/X/XR/ipXR_Blue.png" alt="">
-                        <div class="view-box">View</div>
-                    </div>
-                    <div class="color-preview">
-                        <div style="background-color: rgb(0, 191, 255);"> a</div>
-                        <div style="background-color: coral;"> a</div>
-                        <div style="background-color: red;"> a</div>
-                        <div style="background-color: white;"> a</div>
-                    </div>
-                    <h2>iPhone XR</h2>
-                    <p>From RM899</p>
-                </a>
-                <a href="" class="X-box" style="text-decoration: none;">
-                    <div class="preview">
-                        <img src="image/X/XS/ipXS_Black.png" alt="">
-                        <div class="view-box">View</div>
-                    </div>
-                    <div class="color-preview">
-                        <div style="background-color: rgb(61, 61, 61);"> a</div>
-                        <div style="background-color: rgb(237, 218, 111);"> a</div>
-                        <div style="background-color: white;"> a</div>
-                    </div>
-                    <h2>iPhone XS</h2>
-                    <p>From RM899</p>
-                </a>
-                <a href="" class="X-box" style="text-decoration: none;">
-                    <div class="preview">
-                        <img src="image/X/XS/ipXS_Gold.png" alt="">
-                        <div class="view-box">View</div>
-                    </div>
-                    <div class="color-preview">
-                        <div style="background-color: rgb(61, 61, 61);"> a</div>
-                        <div style="background-color: rgb(237, 218, 111);"> a</div>
-                        <div style="background-color: white;"> a</div>
-                    </div>
-                    <h2>iPhone XS Max</h2>
-                    <p>From RM999</p>
                 </a>-->
 
             </div>

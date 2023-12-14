@@ -127,6 +127,7 @@ main>div:nth-child(1) {
 }
 
 .image>img {
+    opacity: 0;
     height: 450px;
     position: absolute;
     transition: .5s;
