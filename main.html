@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vtech</title>
-    <link rel="icon" href="favicon_io/favicon.ico">
+    <link rel="icon" href="icon/icon.png">
     <link rel="stylesheet" href="main-style.css">
 </head>
 
@@ -41,7 +41,7 @@
         <nav id="nav-bar">
             <div class="white-slide-down" id="wslide"> </div>
             <!-- Home -->
-            <a href="main.html"><img src="icon/logo.png" alt="" class="left" style="height: 55px;
+            <a href="main.html"><img src="icon/VTechLogo.png" alt="" class="left" style="height: 55px;
                 padding: 5px;"></a>
 
             <!-- Device Category -->
@@ -63,8 +63,8 @@
         </nav>
         <div class="profile-box" id="prbox">
             <h4>username: </h4>
-            <a href="" class="view-profile">View Profile</a>
-            <a href="" class="logout">Logout</a>
+            <a href="login.html" class="view-profile">View Profile</a>
+            <a href="" class="logout" style="color: tomato;">Logout</a>
         </div>
 
         <div class="view-blur" id="viewBlur" onclick="viewiPhone()">
@@ -128,16 +128,21 @@
         </div>
 
         <div class="iPhone-promo" id="iPhoneX">
-            <img src="image/iPhoneX-Promo.png" alt="">
+            <video autoplay muted loop id="iphoneXpromo">
+                <source src="video/iPhone X Trailer Oficial.mp4" type="video/mp4">
+            </video>
             <div class="iPhone-promo-desc">
                 <h2>iPhone X</h2>
                 <p>As low as RM799</p>
                 <a href="view-device.php?series=iPhoneX">browse now</a>
             </div>
         </div>
-        <hr>
+        <hr style="margin: 30px 0;">
         <div class="iPhone-promo" id="iPhone11">
-            <img src="image/iphone-11 Promo.jpg" alt="">
+            <video autoplay muted loop id="iphoneXpromo">
+                <source src="video/Iphone 11 Trailer.mp4" type="video/mp4">
+            </video>
+            <!--<img src="image/iphone-11 Promo.jpg" alt="">-->
             <div class="iPhone-promo-desc">
                 <h2>iPhone 11</h2>
                 <p>As low as RM1,199</p>
@@ -151,9 +156,9 @@
 
         <div class="view-all">
             <div class="arrow" id="arrow-left"><img width="50" height="50"
-                    src="https://img.icons8.com/ios-filled/50/back.png" alt="back" /></div>
+                    src="https://img.icons8.com/ios/50/left--v1.png" alt="back" /></div>
             <div class="arrow" id="arrow-right"><img width="50" height="50"
-                    src="https://img.icons8.com/ios-filled/50/forward--v1.png" alt="forward--v1" /></div>
+                    src="https://img.icons8.com/ios/50/right--v1.png" alt="forward--v1" /></div>
             <div class="iPhone-box">
                 <div class="preview"><img src="image/iphone-14-pro-max-removebg-preview.png" alt=""></div>
                 <h2>iPhone 14 Pro Max</h2>

@@ -163,7 +163,14 @@ mysqli_data_seek($resultMulti, 0);
                     <p>Capacity: <span id="plusCapacityText" style="font-size: 18px;"></span></p>
                     <div class="spec">
                         <?php
-                            foreach ($resultMulti as $row) {
+                            $row = $resultMulti->fetch_assoc();
+                            echo '<label class="capacity">
+                            <input type="radio" name="capacity" value="'. $row['DeviceCapacity'] .'" id="'. $row['DeviceCapacity'] .'" onclick="calculate()" checked = checked >
+                            '. $row['DeviceCapacity'] .'
+                            </label>
+                            <span class="divider"></span>';
+
+                            while ($row = $resultMulti->fetch_assoc()) {
                                 if ($row['DeviceCapacity'] != null) {
                                     echo '<label class="capacity">
                                     <input type="radio" name="capacity" value="'. $row['DeviceCapacity'] .'" id="'. $row['DeviceCapacity'] .'" onclick="calculate()">
@@ -184,7 +191,7 @@ mysqli_data_seek($resultMulti, 0);
                     <p>Waranty: <span id="plusWarantyText" style="font-size: 18px;"></span></p>
                     <div class="spec">
                         <label class="waranty">
-                            <input type="radio" name="waranty" id="6" value="6" onclick="calculate()">
+                            <input type="radio" name="waranty" id="6" value="6" onclick="calculate()" checked = checked>
                             6 Months
                         </label>
                         <span class="divider"></span>
@@ -194,7 +201,12 @@ mysqli_data_seek($resultMulti, 0);
                         </label>
                     </div>
                     <div class="total">
-                        <p id="output"></p>
+                        <?php
+                        $row = $result->fetch_assoc();
+                        echo '<p id="output">Total: RM'. $row['price'] .'.00</p>';
+
+                        mysqli_data_seek($result,0);                        
+                        ?>
                     </div>
                     <button type="submit" class="bag">Add to Bag</button>
                     <button type="submit" class="checkout">Buy Now</button>
@@ -257,7 +269,7 @@ mysqli_data_seek($resultMulti, 0);
         <div class="ftup">
             <div class="aboutft">
                 <h4>About us</h4>
-                <a href="about.html" class="ftlink">about VTech</a>
+                <a href="about.html" class="ftlink">About VTech</a>
             </div>
             <div class="csft">
                 <h4>Customer Service</h4>

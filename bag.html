@@ -86,13 +86,13 @@
     <main>
         <div class="bag-empty">
             <img src="icon/icons8-bag-96.png" alt="">
-            <h2>Your bag is currently empty</h2>
+            <h2>Your cart is currently empty</h2>
             <a href="main.html"><button>return to browse</button></a>
         </div>
 
         <div class="bag">
             <div class="title">
-                <h1>BAG</h1>
+                <h1>CART</h1>
                 <div class="bag-header">
                     <p style="width: 45%;">DEVICE</p>
                     <p style="width: 15%;">PRICE</p>
@@ -103,12 +103,11 @@
             <hr>
             <div class="item">
                 <div class="device" style="width: 45%;">
-                    <img src="image/iphone-13-pro-max-removebg-preview.png" alt="">
+                    <img src="image/XIII/13 Pro/ip13Pro_Gold.png" alt="">
                     <div class="device-desc">
                         <h4>iPhone 13 Pro Max</h4>
-                        <p>Color: light blue</p>
-                        <p>Capacity: 64GB</p>
-                        <p>Grade: Fair</p>
+                        <p>Color: Gold</p>
+                        <p>Capacity: 128GB</p>
                         <p>Waranty: 6 Month</p>
                     </div>
                 </div>
@@ -116,27 +115,28 @@
                     <p>RM 2,999</p>
                 </div>
                 <div class="quantity" style="width: 15%;">
-                    <div>-</div> 1 <div>+</div>
+                    <div id="minus">-</div>
+                    <p id="output-quantity"></p>
+                    <div id="plus">+</div>
                 </div>
                 <div class="total" style="width: 25%;">
-                    <p>RM 2,999</p>
+                    <p id="output-total">RM 2999</p>
                     <button class="remove-button">Remove</button>
                 </div>
             </div>
             <hr>
 
-
         </div>
         <div class="checkout">
-            <p class="subtotal">subtotal: RM2,999</p>
-            <a href="checkout.html" class="checkout-button"> checkout</a>
+            <p class="subtotal">Subtotal: RM2999</p>
+            <a href="checkout.html" class="checkout-button"> Checkout</a>
         </div>
     </main>
     <footer>
         <div class="ftup">
             <div class="aboutft">
                 <h4>About us</h4>
-                <a href="about.html" class="ftlink">about VTech</a>
+                <a href="about.html" class="ftlink">About VTech</a>
             </div>
             <div class="csft">
                 <h4>Customer Service</h4>
@@ -162,6 +162,30 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        let quantity = 1, total = 2999;
+        let increment = document.getElementById('plus');
+        let decrement = document.getElementById('minus');
+        let outputQuantity = document.getElementById('output-quantity')
+        let outputTotal = document.getElementById('output-total');
+
+        increment.addEventListener('click', function () {
+            quantity++;
+            outputQuantity.innerHTML = quantity;
+            outputTotal.innerHTML = 'RM ' + total * quantity;
+        })
+        decrement.addEventListener('click', function () {
+            if (quantity > 1) {
+                quantity--;
+            }
+            outputQuantity.innerHTML = quantity;
+            outputTotal.innerHTML = 'RM ' + total * quantity;
+        })
+
+        outputQuantity.innerHTML = quantity;
+
+
+    </script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'dummy';
+$dbname = 'vtechdb';
 
 //connection
 $conn = mysqli_connect($servername, $username, $password)

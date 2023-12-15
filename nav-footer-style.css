@@ -352,9 +352,9 @@ footer hr {
     width: 10%;
 }
 
-
-.aboutft a:hover {
-    border-bottom: white 1px solid;
+.aboutft a {
+    color: #4284ff;
+    border-bottom: #4284ff 1px solid;
 }
 
 .csft {

@@ -3,6 +3,7 @@ include 'connection.php';
 
 $querySelectName = 'SELECT * FROM device';
 $result = mysqli_query($conn, $querySelectName) OR die('Query Failed');
+
 /*
 $queryColor = 'SELECT DeviceColor FROM deviceattributes';
 $resultColor = mysqli_query($conn, $queryColor) OR die('Query Failed');*/
@@ -22,7 +23,7 @@ $conn -> close();
 </head>
 
 <body>
-    <div id="preloader"></div>
+    <!--<div id="preloader"></div>-->
     <header>
         <!-- Search Box -->
         <div class="search-container" id="scontain">
@@ -337,39 +338,28 @@ $conn -> close();
             <div class="device-box">
                 <?php
                     foreach($result as $row){
+                        include 'connection.php';
                         echo '<a href="device-page.php?id='. $row['DeviceID'].'" class="X-box" style="text-decoration: none;">
                         <div class="preview">
                             <img src="'. $row['image'] .'" alt="">
                             <div class="view-box">View</div>
                         </div>
                         
-                        <div class="color-preview">';  /*
-                        $queryColor = 'SELECT DeviceColor FROM deviceattributes WHERE DeviceID =' . $row['DeviceID'];
+                        <div class="color-preview">';  
+                        $queryColor = "SELECT DeviceColor FROM deviceattributes WHERE DeviceID =". $row['DeviceID'];
                         $resultColor = mysqli_query($conn, $queryColor);
                             while($rowColor = $resultColor -> fetch_assoc()){
-                                echo '<div style="background-color: '. $rowColor['DeviceColor'] .';"> a</div>';
-                            }  */
-
+                                echo '<div style="background-color: '. $rowColor['DeviceColor'] .';">a</div>';
+                            }  
+                
                         echo '</div>
                         <h2>'. $row['Name'] . '</h2>
                         <p> RM '. $row['price'] . '</p>
-                    </a>';
+                        </a>';
+                        
+                        $conn->close();
                     }
                 ?>
-                <!--
-                <a href="device-page.html" class="X-box" style="text-decoration: none;">
-                    <div class="preview">
-                        <img src="image/X/X/iphonex.png" alt="">
-                        <div class="view-box">View</div>
-                    </div>
-                    <div class="color-preview">
-                        <div style="background-color: gray;"> a</div>
-                        <div style="background-color: silver;"> a</div>
-                    </div>
-                    <h2>iPhone X</h2>
-                    <p>From RM799</p>
-                </a>-->
-
             </div>
         </div>
     </main>
@@ -377,7 +367,7 @@ $conn -> close();
         <div class="ftup">
             <div class="aboutft">
                 <h4>About us</h4>
-                <a href="about.html" class="ftlink">about VTech</a>
+                <a href="about.html" class="ftlink">About VTech</a>
             </div>
             <div class="csft">
                 <h4>Customer Service</h4>
